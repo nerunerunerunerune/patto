@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消費税計算 ― 税抜⇄税込をぱっと｜ぱっと計算</title>
+<meta name="description" content="金額と税率を入れるだけで、税抜→税込・税込→税抜を計算する無料ツール。10%・8%（軽減税率）対応、消費税額も表示。買い物・経理・見積りに。登録不要・端末内で完結。">
+<link rel="canonical" href="https://patto.kawatare.studio/tool-tax.html">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ぱっと計算">
+<meta property="og:title" content="消費税計算｜税抜⇄税込をぱっと">
+<meta property="og:description" content="金額と税率を入れるだけで、税抜→税込・税込→税抜を計算する無料ツール。10%・8%（軽減税率）対応、消費税額も表示。買い物・経理・見積りに。登録不要・端末内で完結。">
+<meta property="og:url" content="https://patto.kawatare.studio/tool-tax.html">
+<meta property="og:image" content="https://patto.kawatare.studio/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="消費税計算｜税抜⇄税込をぱっと">
+<meta name="twitter:description" content="金額と税率を入れるだけで、税抜→税込・税込→税抜を計算する無料ツール。10%・8%（軽減税率）対応、消費税額も表示。買い物・経理・見積りに。登録不要・端末内で完結。">
+<meta name="twitter:image" content="https://patto.kawatare.studio/ogp.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"消費税計算｜ぱっと計算","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"description":"金額と税率を入れるだけで、税抜→税込・税込→税抜を計算する無料ツール。10%・8%（軽減税率）対応、消費税額も表示。買い物・経理・見積りに。登録不要・端末内で完結。"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"消費税計算の使い方","step":[{"@type":"HowToStep","name":"金額を入れる","text":"税抜または税込の金額を入力します。"},{"@type":"HowToStep","name":"税率と方向","text":"税率と、税抜→税込／税込→税抜を選びます。"},{"@type":"HowToStep","name":"結果を確認","text":"金額と消費税額が表示されます。"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"軽減税率（8%）に対応していますか？","acceptedAnswer":{"@type":"Answer","text":"はい。10%・8%を選べます。任意の税率で計算したい場合もプルダウンから選べます。"}},{"@type":"Question","name":"端数はどう処理されますか？","acceptedAnswer":{"@type":"Answer","text":"税抜→税込は消費税を切り捨て、税込→税抜は税抜額を四捨五入して表示します（一般的な処理）。"}},{"@type":"Question","name":"データは送信されますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。すべて端末内で計算します。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ぱっと計算","item":"https://patto.kawatare.studio/"},{"@type":"ListItem","position":2,"name":"消費税計算","item":"https://patto.kawatare.studio/tool-tax.html"}]}</script>
+<style>
+  :root{--bg:#f5f5fb;--card:#ffffff;--ink:#1c1c2e;--ink-2:#5a5a72;--muted:#9797ac;--line:#e6e6f0;
+    --brand:#4f46e5;--brand-d:#3f37c9;--accent:#f59e0b;--good:#0e9f6e;--good-bg:#e7f7f0;
+    --shadow:0 1px 2px rgba(30,30,60,.05),0 8px 22px rgba(30,30,60,.07);}
+  @media (prefers-color-scheme:dark){:root{--bg:#101019;--card:#1a1a27;--ink:#eeeef7;--ink-2:#adadc4;--muted:#78788f;
+    --line:#2a2a3c;--brand:#8b83f5;--brand-d:#b3aef9;--accent:#fbbf24;--good:#3fce97;--good-bg:#14311f;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.45);}}
+
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;}
+  .sitebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;}
+  .sb-brand{display:flex;align-items:center;gap:9px;font-weight:800;text-decoration:none;color:var(--ink);font-size:16px;}
+  .sb-logo{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-size:16px;}
+  .sb-links{display:flex;gap:12px;font-size:13.5px;font-weight:700;} .sb-links a{text-decoration:none;color:var(--ink-2);} .sb-links a:hover{color:var(--brand);}
+  .wrap{max-width:760px;margin:0 auto;padding:18px 16px 64px;}
+  header.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 12px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .logo{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;box-shadow:var(--shadow);}
+  .brand h1{font-size:20px;margin:0;line-height:1.3;} .brand .tag{font-size:12.5px;color:var(--ink-2);}
+  .free{font-size:12px;color:var(--good);background:var(--good-bg);padding:5px 11px;border-radius:20px;font-weight:800;white-space:nowrap;}
+  .answer{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:14px;padding:13px 17px;margin:6px 0 16px;font-size:14.5px;box-shadow:var(--shadow);}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+  .seg{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px;flex-wrap:wrap;margin:2px 0 12px;}
+  .seg button{flex:1;border:none;background:transparent;color:var(--ink-2);font-weight:800;font-size:13.5px;padding:10px 6px;border-radius:9px;cursor:pointer;font-family:inherit;min-width:72px;}
+  .seg button.on{background:var(--card);color:var(--brand);box-shadow:var(--shadow);}
+  .field{margin:12px 0;} .field label{display:block;font-size:13px;font-weight:800;color:var(--ink-2);margin-bottom:6px;}
+  .inp{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--bg);color:var(--ink);font-family:inherit;font-size:16px;}
+  select.inp{appearance:none;-webkit-appearance:none;}
+  .inrow{display:flex;gap:10px;flex-wrap:wrap;}
+  .result{background:var(--good-bg);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:14px;text-align:center;}
+  .result .big{font-size:32px;font-weight:800;color:var(--brand);font-variant-numeric:tabular-nums;line-height:1.25;}
+  .result .sub{font-size:13.5px;color:var(--ink-2);margin-top:6px;}
+  .rtable{width:100%;border-collapse:collapse;margin-top:10px;} .rtable td{padding:9px 10px;border-bottom:1px solid var(--line);font-size:15px;} .rtable tr:last-child td{border-bottom:none;} .rtable td:last-child{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;}
+  .ad{border:1px dashed var(--line);border-radius:14px;padding:14px;text-align:center;color:var(--muted);font-size:12px;background:var(--card);margin:16px 0;}
+  .seo h2{font-size:18px;margin:26px 0 10px;}
+  .howto{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;} @media(max-width:600px){.howto{grid-template-columns:1fr;}}
+  .howto .st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;}
+  .howto .st .n{width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px;}
+  .howto .st b{display:block;margin:8px 0 2px;} .howto .st p{margin:0;font-size:13px;color:var(--ink-2);}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:11px 15px;margin-bottom:8px;}
+  .faq summary{font-weight:800;cursor:pointer;font-size:14.5px;} .faq p{font-size:13.5px;color:var(--ink-2);margin:8px 0 0;}
+  .rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;} @media(max-width:600px){.rel-grid{grid-template-columns:1fr;}}
+  .rel{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:800;} .rel:hover{border-color:var(--brand);}
+  .rel span{display:block;font-size:12px;color:var(--ink-2);font-weight:500;margin-top:2px;}
+  .foot{font-size:12px;color:var(--muted);text-align:center;margin-top:24px;line-height:1.95;}
+  .foot a{color:var(--ink-2);}
+
+
+</style>
+</head>
+<body>
+<nav class="sitebar">
+  <a class="sb-brand" href="index.html"><span class="sb-logo">🧮</span>ぱっと計算</a>
+  <div class="sb-links"><a href="index.html">ツール一覧</a><a href="about.html">このサイトについて</a></div>
+</nav>
+<div class="wrap">
+  <header class="hd">
+    <div class="brand"><div class="logo">🧾</div><div><h1>消費税計算</h1><div class="tag">税抜⇄税込をぱっと</div></div></div>
+    <div class="free">⚡ 登録不要・無料</div>
+  </header>
+  <div class="answer">金額と税率（10%・8%など）、計算方向（税抜→税込／税込→税抜）を選ぶと、金額と<b>消費税額</b>を計算します。買い物や見積りの確認にどうぞ。</div>
+  <div class="panel">
+  <div class="field"><label>金額（円）</label><input class="inp" id="amt" type="number" inputmode="numeric" placeholder="例：1000"></div>
+  <div class="inrow"><div class="field" style="flex:1"><label>税率</label><select class="inp" id="rate"><option value="10" selected>10%</option><option value="8">8%（軽減）</option><option value="0">0%</option></select></div><div class="field" style="flex:1"><label>計算方向</label><select class="inp" id="dir"><option value="in">税抜→税込</option><option value="out">税込→税抜</option></select></div></div>
+  <div class="result"><div class="big" id="tout">–</div><div class="sub" id="tsub"></div></div>
+</div>
+  <div class="ad">広告スペース（審査通過後に AdSense タグを挿入）</div>
+  <section class="seo">
+    <h2>使い方（3ステップ）</h2>
+    <div class="howto"><div class="st"><div class="n">1</div><b>金額を入れる</b><p>税抜または税込の金額を入力します。</p></div><div class="st"><div class="n">2</div><b>税率と方向</b><p>税率と、税抜→税込／税込→税抜を選びます。</p></div><div class="st"><div class="n">3</div><b>結果を確認</b><p>金額と消費税額が表示されます。</p></div></div>
+    <h2>よくある質問</h2>
+    <div class="faq"><details open><summary>軽減税率（8%）に対応していますか？</summary><p>はい。10%・8%を選べます。任意の税率で計算したい場合もプルダウンから選べます。</p></details><details><summary>端数はどう処理されますか？</summary><p>税抜→税込は消費税を切り捨て、税込→税抜は税抜額を四捨五入して表示します（一般的な処理）。</p></details><details><summary>データは送信されますか？</summary><p>いいえ。すべて端末内で計算します。</p></details></div>
+    <h2>ほかの計算ツール</h2>
+    <div class="rel-grid"><a class="rel" href="tool-date-calc.html">📅 日付計算 <span>何日後・何日間・曜日</span></a><a class="rel" href="tool-age.html">🎂 年齢・和暦 <span>生年月日から年齢・和暦</span></a><a class="rel" href="tool-warikan.html">💰 割り勘 <span>1人いくらを端数調整</span></a><a class="rel" href="tool-discount.html">🏷️ 割引価格 <span>％オフ・〇割引の価格</span></a><a class="rel" href="tool-unit.html">📏 単位換算 <span>長さ・重さ・温度</span></a><a class="rel" href="index.html">🧮 ツール一覧 <span>ぱっと計算のツール</span></a></div>
+  </section>
+  <div class="foot"><a href="index.html">ツール一覧</a> ・ <a href="about.html">このサイトについて</a> ・ <a href="privacy.html">プライバシー</a> ・ <a href="terms.html">利用規約</a><br>ぱっと計算 ・ 最終更新：2026-07-20 ・ すべての計算は端末内で完結します</div>
+</div>
+<script>(function(){
+  function calc(){var a=parseFloat(document.getElementById('amt').value)||0,r=parseFloat(document.getElementById('rate').value)||0,dir=document.getElementById('dir').value;
+    if(a<=0){document.getElementById('tout').textContent='–';document.getElementById('tsub').textContent='';return;}
+    var net,tax,gross;
+    if(dir==='in'){net=a;tax=Math.floor(a*r/100);gross=net+tax;document.getElementById('tout').textContent='税込 '+gross.toLocaleString()+' 円';}
+    else{gross=a;net=Math.round(a/(1+r/100));tax=gross-net;document.getElementById('tout').textContent='税抜 '+net.toLocaleString()+' 円';}
+    document.getElementById('tsub').textContent='消費税 '+tax.toLocaleString()+' 円（税率'+r+'%）';}
+  ['amt','rate','dir'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+  window.__tool={calc:function(a,r,dir){document.getElementById('amt').value=a;document.getElementById('rate').value=r;document.getElementById('dir').value=dir;calc();return document.getElementById('tout').textContent;}};
+})();</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "ぱっと計算",
+  "short_name": "ぱっと計算",
+  "description": "暮らしの計算をまとめた無料ツール集",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5fb",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

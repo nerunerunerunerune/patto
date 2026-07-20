@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://patto.kawatare.studio/sitemap.xml

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日付計算 ― 何日後・何日間・曜日をぱっと｜ぱっと計算</title>
+<meta name="description" content="2つの日付の期間（日数・週数）や、指定日から〇日後／前の日付と曜日をすぐ計算できる無料ツール。締切・記念日・カウントダウンに。登録不要・端末内で完結。">
+<link rel="canonical" href="https://patto.kawatare.studio/tool-date-calc.html">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ぱっと計算">
+<meta property="og:title" content="日付計算｜何日後・何日間・曜日をぱっと">
+<meta property="og:description" content="2つの日付の期間（日数・週数）や、指定日から〇日後／前の日付と曜日をすぐ計算できる無料ツール。締切・記念日・カウントダウンに。登録不要・端末内で完結。">
+<meta property="og:url" content="https://patto.kawatare.studio/tool-date-calc.html">
+<meta property="og:image" content="https://patto.kawatare.studio/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="日付計算｜何日後・何日間・曜日をぱっと">
+<meta name="twitter:description" content="2つの日付の期間（日数・週数）や、指定日から〇日後／前の日付と曜日をすぐ計算できる無料ツール。締切・記念日・カウントダウンに。登録不要・端末内で完結。">
+<meta name="twitter:image" content="https://patto.kawatare.studio/ogp.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"日付計算｜ぱっと計算","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"description":"2つの日付の期間（日数・週数）や、指定日から〇日後／前の日付と曜日をすぐ計算できる無料ツール。締切・記念日・カウントダウンに。登録不要・端末内で完結。"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"日付計算の使い方","step":[{"@type":"HowToStep","name":"モードを選ぶ","text":"「期間を計算」か「〇日後/前」を選びます。"},{"@type":"HowToStep","name":"日付を入れる","text":"日付や日数を入力すると自動で計算します。"},{"@type":"HowToStep","name":"結果を確認","text":"日数・週数、または日付と曜日が表示されます。"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"開始日と終了日はどちらも含まれますか？","acceptedAnswer":{"@type":"Answer","text":"表示するのは2日付の間の日数（差）です。両端を含む「〇日間」として数えたい場合は+1してお考えください。"}},{"@type":"Question","name":"曜日も分かりますか？","acceptedAnswer":{"@type":"Answer","text":"はい。「〇日後/前」では計算結果の日付とあわせて曜日を表示します。"}},{"@type":"Question","name":"データは送信されますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。すべて端末内で計算し、入力は送信されません。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ぱっと計算","item":"https://patto.kawatare.studio/"},{"@type":"ListItem","position":2,"name":"日付計算","item":"https://patto.kawatare.studio/tool-date-calc.html"}]}</script>
+<style>
+  :root{--bg:#f5f5fb;--card:#ffffff;--ink:#1c1c2e;--ink-2:#5a5a72;--muted:#9797ac;--line:#e6e6f0;
+    --brand:#4f46e5;--brand-d:#3f37c9;--accent:#f59e0b;--good:#0e9f6e;--good-bg:#e7f7f0;
+    --shadow:0 1px 2px rgba(30,30,60,.05),0 8px 22px rgba(30,30,60,.07);}
+  @media (prefers-color-scheme:dark){:root{--bg:#101019;--card:#1a1a27;--ink:#eeeef7;--ink-2:#adadc4;--muted:#78788f;
+    --line:#2a2a3c;--brand:#8b83f5;--brand-d:#b3aef9;--accent:#fbbf24;--good:#3fce97;--good-bg:#14311f;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.45);}}
+
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;}
+  .sitebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;}
+  .sb-brand{display:flex;align-items:center;gap:9px;font-weight:800;text-decoration:none;color:var(--ink);font-size:16px;}
+  .sb-logo{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-size:16px;}
+  .sb-links{display:flex;gap:12px;font-size:13.5px;font-weight:700;} .sb-links a{text-decoration:none;color:var(--ink-2);} .sb-links a:hover{color:var(--brand);}
+  .wrap{max-width:760px;margin:0 auto;padding:18px 16px 64px;}
+  header.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 12px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .logo{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;box-shadow:var(--shadow);}
+  .brand h1{font-size:20px;margin:0;line-height:1.3;} .brand .tag{font-size:12.5px;color:var(--ink-2);}
+  .free{font-size:12px;color:var(--good);background:var(--good-bg);padding:5px 11px;border-radius:20px;font-weight:800;white-space:nowrap;}
+  .answer{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:14px;padding:13px 17px;margin:6px 0 16px;font-size:14.5px;box-shadow:var(--shadow);}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+  .seg{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px;flex-wrap:wrap;margin:2px 0 12px;}
+  .seg button{flex:1;border:none;background:transparent;color:var(--ink-2);font-weight:800;font-size:13.5px;padding:10px 6px;border-radius:9px;cursor:pointer;font-family:inherit;min-width:72px;}
+  .seg button.on{background:var(--card);color:var(--brand);box-shadow:var(--shadow);}
+  .field{margin:12px 0;} .field label{display:block;font-size:13px;font-weight:800;color:var(--ink-2);margin-bottom:6px;}
+  .inp{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--bg);color:var(--ink);font-family:inherit;font-size:16px;}
+  select.inp{appearance:none;-webkit-appearance:none;}
+  .inrow{display:flex;gap:10px;flex-wrap:wrap;}
+  .result{background:var(--good-bg);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:14px;text-align:center;}
+  .result .big{font-size:32px;font-weight:800;color:var(--brand);font-variant-numeric:tabular-nums;line-height:1.25;}
+  .result .sub{font-size:13.5px;color:var(--ink-2);margin-top:6px;}
+  .rtable{width:100%;border-collapse:collapse;margin-top:10px;} .rtable td{padding:9px 10px;border-bottom:1px solid var(--line);font-size:15px;} .rtable tr:last-child td{border-bottom:none;} .rtable td:last-child{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;}
+  .ad{border:1px dashed var(--line);border-radius:14px;padding:14px;text-align:center;color:var(--muted);font-size:12px;background:var(--card);margin:16px 0;}
+  .seo h2{font-size:18px;margin:26px 0 10px;}
+  .howto{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;} @media(max-width:600px){.howto{grid-template-columns:1fr;}}
+  .howto .st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;}
+  .howto .st .n{width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px;}
+  .howto .st b{display:block;margin:8px 0 2px;} .howto .st p{margin:0;font-size:13px;color:var(--ink-2);}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:11px 15px;margin-bottom:8px;}
+  .faq summary{font-weight:800;cursor:pointer;font-size:14.5px;} .faq p{font-size:13.5px;color:var(--ink-2);margin:8px 0 0;}
+  .rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;} @media(max-width:600px){.rel-grid{grid-template-columns:1fr;}}
+  .rel{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:800;} .rel:hover{border-color:var(--brand);}
+  .rel span{display:block;font-size:12px;color:var(--ink-2);font-weight:500;margin-top:2px;}
+  .foot{font-size:12px;color:var(--muted);text-align:center;margin-top:24px;line-height:1.95;}
+  .foot a{color:var(--ink-2);}
+
+
+</style>
+</head>
+<body>
+<nav class="sitebar">
+  <a class="sb-brand" href="index.html"><span class="sb-logo">🧮</span>ぱっと計算</a>
+  <div class="sb-links"><a href="index.html">ツール一覧</a><a href="about.html">このサイトについて</a></div>
+</nav>
+<div class="wrap">
+  <header class="hd">
+    <div class="brand"><div class="logo">📅</div><div><h1>日付計算</h1><div class="tag">何日後・何日間・曜日をぱっと</div></div></div>
+    <div class="free">⚡ 登録不要・無料</div>
+  </header>
+  <div class="answer"><b>期間を計算</b>で2つの日付の日数・週数を、<b>〇日後/前</b>で基準日から数えた日付と曜日を求められます。締切や記念日の計算にどうぞ。すべて端末内で計算します。</div>
+  <div class="panel">
+  <div class="seg" id="mode"><button data-v="diff" class="on">期間を計算</button><button data-v="add">〇日後 / 前</button></div>
+  <div id="diffBox">
+    <div class="inrow"><div class="field" style="flex:1"><label>開始日</label><input class="inp" id="d1" type="date"></div><div class="field" style="flex:1"><label>終了日</label><input class="inp" id="d2" type="date"></div></div>
+    <div class="result"><div class="big" id="diffOut">–</div><div class="sub" id="diffSub"></div></div>
+  </div>
+  <div id="addBox" style="display:none">
+    <div class="inrow"><div class="field" style="flex:1"><label>基準日</label><input class="inp" id="d3" type="date"></div><div class="field" style="flex:1"><label>日数（マイナスで前）</label><input class="inp" id="dn" type="number" value="7"></div></div>
+    <div class="result"><div class="big" id="addOut">–</div><div class="sub" id="addSub"></div></div>
+  </div>
+</div>
+  <div class="ad">広告スペース（審査通過後に AdSense タグを挿入）</div>
+  <section class="seo">
+    <h2>使い方（3ステップ）</h2>
+    <div class="howto"><div class="st"><div class="n">1</div><b>モードを選ぶ</b><p>「期間を計算」か「〇日後/前」を選びます。</p></div><div class="st"><div class="n">2</div><b>日付を入れる</b><p>日付や日数を入力すると自動で計算します。</p></div><div class="st"><div class="n">3</div><b>結果を確認</b><p>日数・週数、または日付と曜日が表示されます。</p></div></div>
+    <h2>よくある質問</h2>
+    <div class="faq"><details open><summary>開始日と終了日はどちらも含まれますか？</summary><p>表示するのは2日付の間の日数（差）です。両端を含む「〇日間」として数えたい場合は+1してお考えください。</p></details><details><summary>曜日も分かりますか？</summary><p>はい。「〇日後/前」では計算結果の日付とあわせて曜日を表示します。</p></details><details><summary>データは送信されますか？</summary><p>いいえ。すべて端末内で計算し、入力は送信されません。</p></details></div>
+    <h2>ほかの計算ツール</h2>
+    <div class="rel-grid"><a class="rel" href="tool-age.html">🎂 年齢・和暦 <span>生年月日から年齢・和暦</span></a><a class="rel" href="tool-warikan.html">💰 割り勘 <span>1人いくらを端数調整</span></a><a class="rel" href="tool-discount.html">🏷️ 割引価格 <span>％オフ・〇割引の価格</span></a><a class="rel" href="tool-unit.html">📏 単位換算 <span>長さ・重さ・温度</span></a><a class="rel" href="tool-tax.html">🧾 消費税計算 <span>税抜⇄税込</span></a><a class="rel" href="index.html">🧮 ツール一覧 <span>ぱっと計算のツール</span></a></div>
+  </section>
+  <div class="foot"><a href="index.html">ツール一覧</a> ・ <a href="about.html">このサイトについて</a> ・ <a href="privacy.html">プライバシー</a> ・ <a href="terms.html">利用規約</a><br>ぱっと計算 ・ 最終更新：2026-07-20 ・ すべての計算は端末内で完結します</div>
+</div>
+<script>(function(){
+  var W=['日','月','火','水','木','金','土'],mode='diff';
+  function pd(s){if(!s)return null;var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+  function fmt(d){return d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日（'+W[d.getDay()]+'）';}
+  function today(){var t=new Date();return t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');}
+  function calcDiff(){var a=pd(document.getElementById('d1').value),b=pd(document.getElementById('d2').value);if(!a||!b){document.getElementById('diffOut').textContent='–';document.getElementById('diffSub').textContent='';return;}var days=Math.round((b-a)/86400000);document.getElementById('diffOut').textContent=days.toLocaleString()+' 日間';document.getElementById('diffSub').textContent='約 '+(Math.round(days/7*10)/10)+' 週間 ／ '+fmt(a)+' 〜 '+fmt(b);}
+  function calcAdd(){var a=pd(document.getElementById('d3').value);var n=parseInt(document.getElementById('dn').value,10);if(!a||isNaN(n)){document.getElementById('addOut').textContent='–';document.getElementById('addSub').textContent='';return;}var r=new Date(a.getTime()+n*86400000);document.getElementById('addOut').textContent=fmt(r);document.getElementById('addSub').textContent=(n>=0?n+'日後':(-n)+'日前');}
+  document.querySelectorAll('#mode button').forEach(function(bx){bx.addEventListener('click',function(){document.querySelectorAll('#mode button').forEach(function(x){x.classList.remove('on');});bx.classList.add('on');mode=bx.dataset.v;document.getElementById('diffBox').style.display=mode==='diff'?'':'none';document.getElementById('addBox').style.display=mode==='add'?'':'none';});});
+  ['d1','d2'].forEach(function(id){document.getElementById(id).addEventListener('input',calcDiff);});
+  ['d3','dn'].forEach(function(id){document.getElementById(id).addEventListener('input',calcAdd);});
+  document.getElementById('d1').value=today();document.getElementById('d3').value=today();calcDiff();calcAdd();
+  window.__tool={diff:function(a,b){document.getElementById('d1').value=a;document.getElementById('d2').value=b;calcDiff();return document.getElementById('diffOut').textContent;},add:function(a,n){document.getElementById('d3').value=a;document.getElementById('dn').value=n;calcAdd();return document.getElementById('addOut').textContent;}};
+})();</script>
+</body>
+</html>

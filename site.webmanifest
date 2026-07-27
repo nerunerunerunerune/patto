@@ -2,15 +2,104 @@
   "name": "ぱっと計算",
   "short_name": "ぱっと計算",
   "description": "暮らしの計算をまとめた無料ツール集",
-  "start_url": "/",
+  "start_url": "/?utm_source=pwa&utm_medium=homescreen",
   "display": "standalone",
   "background_color": "#f5f5fb",
   "theme_color": "#4f46e5",
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "/",
+  "scope": "/",
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
+  "orientation": "any",
+  "lang": "ja",
+  "dir": "ltr",
+  "categories": [
+    "utilities",
+    "productivity"
+  ],
+  "shortcuts": [
+    {
+      "name": "日付計算",
+      "short_name": "日付計算",
+      "url": "/tool-date-calc.html",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "年齢・和暦",
+      "short_name": "年齢・和暦",
+      "url": "/tool-age.html",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "割り勘",
+      "short_name": "割り勘",
+      "url": "/tool-warikan.html",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "割引価格",
+      "short_name": "割引価格",
+      "url": "/tool-discount.html",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }

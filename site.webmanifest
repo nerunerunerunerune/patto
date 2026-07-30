@@ -56,7 +56,7 @@
     {
       "name": "日付計算",
       "short_name": "日付計算",
-      "url": "/tool-date-calc.html",
+      "url": "/tool-date-calc",
       "icons": [
         {
           "src": "/icon-192.png",
@@ -68,7 +68,7 @@
     {
       "name": "年齢・和暦",
       "short_name": "年齢・和暦",
-      "url": "/tool-age.html",
+      "url": "/tool-age",
       "icons": [
         {
           "src": "/icon-192.png",
@@ -80,7 +80,7 @@
     {
       "name": "割り勘",
       "short_name": "割り勘",
-      "url": "/tool-warikan.html",
+      "url": "/tool-warikan",
       "icons": [
         {
           "src": "/icon-192.png",
@@ -92,7 +92,7 @@
     {
       "name": "割引価格",
       "short_name": "割引価格",
-      "url": "/tool-discount.html",
+      "url": "/tool-discount",
       "icons": [
         {
           "src": "/icon-192.png",

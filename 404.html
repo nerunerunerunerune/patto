@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ページが見つかりません（404）｜ぱっと計算</title>
+<meta name="description" content="ぱっと計算：お探しのページは見つかりませんでした。ツール一覧からお探しください。">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RX161KZPB3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RX161KZPB3');</script>
+<style>
+  :root{--bg:#f5f5fb;--card:#ffffff;--ink:#1c1c2e;--ink-2:#5a5a72;--muted:#9797ac;--line:#e6e6f0;
+    --brand:#4f46e5;--brand-d:#3f37c9;--accent:#f59e0b;--good:#0e9f6e;--good-bg:#e7f7f0;
+    --shadow:0 1px 2px rgba(30,30,60,.05),0 8px 22px rgba(30,30,60,.07);}
+  @media (prefers-color-scheme:dark){:root{--bg:#101019;--card:#1a1a27;--ink:#eeeef7;--ink-2:#adadc4;--muted:#78788f;
+    --line:#2a2a3c;--brand:#8b83f5;--brand-d:#b3aef9;--accent:#fbbf24;--good:#3fce97;--good-bg:#14311f;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.45);}}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.85;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--brand);}
+  .sitebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;}
+  .sb-brand{display:flex;align-items:center;gap:9px;font-weight:800;text-decoration:none;color:var(--ink);font-size:16px;}
+  .sb-logo{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-size:16px;}
+  .sb-links{display:flex;gap:13px;font-size:14px;font-weight:700;} .sb-links a{text-decoration:none;color:var(--ink-2);} .sb-links a:hover{color:var(--brand);}
+  .wrap{max-width:880px;margin:0 auto;padding:24px 18px 70px;}
+  .hero{text-align:center;padding:22px 10px 6px;}
+  .hero h1{font-size:29px;margin:6px 0 12px;line-height:1.32;}
+  .hero p{font-size:15.5px;color:var(--ink-2);max-width:620px;margin:0 auto;}
+  .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0 6px;}
+  .chip{font-size:12.5px;font-weight:800;color:var(--brand);background:#ecebfb;padding:6px 13px;border-radius:20px;}
+  @media (prefers-color-scheme:dark){.chip{background:#22223a;}}
+  h2{font-size:21px;margin:40px 0 6px;} .lead2{color:var(--ink-2);font-size:14px;margin:0 0 14px;}
+  .tools{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;} @media(max-width:720px){.tools{grid-template-columns:1fr 1fr;}} @media(max-width:460px){.tools{grid-template-columns:1fr;}}
+  .tool{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);transition:.15s;}
+  .tool:hover{transform:translateY(-2px);border-color:var(--brand);}
+  .tool .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:25px;background:var(--bg);}
+  .tool h3{margin:12px 0 4px;font-size:17px;} .tool p{margin:0;font-size:13px;color:var(--ink-2);}
+  .tool .go{margin-top:10px;font-size:13px;font-weight:800;color:var(--brand);}
+  .use{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:6px;} @media(max-width:720px){.use{grid-template-columns:1fr;}}
+  .use .u{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px;} .use .u b{display:block;margin-bottom:5px;} .use .u p{margin:0;font-size:13.5px;color:var(--ink-2);}
+  .faq{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:6px 18px;}
+  .faq details{border-bottom:1px solid var(--line);padding:13px 0;} .faq details:last-child{border-bottom:none;}
+  .faq summary{font-weight:800;cursor:pointer;font-size:15px;} .faq p{font-size:13.5px;color:var(--ink-2);margin:8px 0 0;}
+  .crumb{font-size:12.5px;color:var(--muted);margin:2px 0 14px;} .crumb a{color:var(--ink-2);text-decoration:none;}
+  .page-h1{font-size:26px;margin:4px 0 6px;} .lead{font-size:15px;color:var(--ink-2);margin:0 0 20px;}
+  .cardp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);}
+  .prose h2{font-size:19px;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line);} .prose h2:first-child{margin-top:4px;}
+  .prose p{margin:8px 0;font-size:14.5px;} .prose ul{margin:8px 0;padding-left:22px;} .prose li{margin:6px 0;font-size:14.5px;}
+  .prose dt{font-weight:800;font-size:14px;margin-top:12px;} .prose dd{margin:2px 0 0;font-size:14.5px;color:var(--ink-2);}
+  .cta{display:inline-block;text-decoration:none;font-weight:800;font-size:15px;padding:12px 22px;border-radius:13px;background:var(--brand);color:#fff;margin-top:8px;}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);text-align:center;line-height:2;}
+  footer a{color:var(--ink-2);text-decoration:none;margin:0 7px;}
+</style>
+<style>
+  .nf{max-width:640px;margin:0 auto;text-align:center;padding:56px 4px 24px;}
+  .nf .nf-code{font-size:64px;font-weight:800;line-height:1;color:var(--brand);margin:0 0 4px;letter-spacing:.02em;}
+  .nf h1{font-size:23px;margin:14px 0 10px;}
+  .nf p{font-size:15px;color:var(--ink-2);margin:0 auto 26px;max-width:30em;}
+  .nf-btn{display:inline-block;text-decoration:none;font-weight:800;font-size:15px;color:#fff;background:var(--brand);padding:13px 28px;border-radius:12px;box-shadow:var(--shadow);}
+  .nf-btn:hover{background:var(--brand-d);}
+</style>
+</head>
+<body>
+<nav class="sitebar"><a class="sb-brand" href="/"><span class="sb-logo">🧮</span>ぱっと計算</a><div class="sb-links"><a href="/">ツール一覧</a><a href="about">このサイトについて</a></div></nav>
+<div class="wrap">
+  <div class="nf">
+    <div class="nf-code">404</div>
+    <h1>ページが見つかりません</h1>
+    <p>お探しのページは見つかりませんでした。移動または削除された可能性があります。</p>
+    <a class="nf-btn" href="/">ツール一覧から探す</a>
+  </div>
+</div>
+<footer><div><a href="/">ツール一覧</a>・<a href="about">このサイトについて</a>・<a href="privacy">プライバシー</a>・<a href="terms">利用規約</a>・<a href="https://kawatare.studio/">かわたれ studio</a></div><div>ぱっと計算 ・ すべての計算は端末内で完結します</div></footer>
+</body>
+</html>

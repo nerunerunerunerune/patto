@@ -58,6 +58,9 @@
   .rtable{width:100%;border-collapse:collapse;margin-top:10px;} .rtable td{padding:9px 10px;border-bottom:1px solid var(--line);font-size:15px;} .rtable tr:last-child td{border-bottom:none;} .rtable td:last-child{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;}
   .ad{border:1px dashed var(--line);border-radius:14px;padding:14px;text-align:center;color:var(--muted);font-size:12px;background:var(--card);margin:16px 0;}
   .seo h2{font-size:18px;margin:26px 0 10px;}
+  .seo p{font-size:14.5px;line-height:1.9;margin:8px 0;}
+  .seo ul{margin:8px 0;padding-left:22px;} .seo li{font-size:14.5px;line-height:1.9;margin:6px 0;}
+  .note-read{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:14px;line-height:1.9;}
   .howto{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;} @media(max-width:600px){.howto{grid-template-columns:1fr;}}
   .howto .st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;}
   .howto .st .n{width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px;}
@@ -94,7 +97,31 @@
   <section class="seo">
     <h2>使い方（3ステップ）</h2>
     <div class="howto"><div class="st"><div class="n">1</div><b>生年月日を入れる</b><p>カレンダーから選ぶか入力します。</p></div><div class="st"><div class="n">2</div><b>基準日（任意）</b><p>省略すると今日の年齢を計算します。</p></div><div class="st"><div class="n">3</div><b>結果を確認</b><p>年齢・和暦・干支が表示されます。</p></div></div>
-    <h2>よくある質問</h2>
+    
+  <h2>基準日を指定できるようにしてある訳</h2>
+  <p>年齢は「いま何歳か」だけでは足りない場面があります。応募資格、統計調査、保険の加入条件——どれも<b>特定の日を基準にした年齢</b>を書かせます。</p>
+  <p>「2026年4月1日現在で18歳以上」のような条件で、いまの年齢を書いてしまうと通らないことがある。誕生日が基準日の直前か直後かで、1歳変わるためです。基準日を変えて計算できるようにしてあるのは、この確認のため。応募締切の直前に気づくより、先に確かめておくほうが安全です。</p>
+  <p>和暦と干支も一緒に出しています。公的書類には和暦欄しかないものがまだ多く、変換のために別のページを開くのは手間だからです。</p>
+  <p>ついでに言えば、干支は西暦を12で割った余りで決まります。余りが4なら子。</p>
+
+  <div class="note-read">
+    <b>年齢は誕生日の前日が終わる時点で1つ上がります。</b>誕生日当日ではありません。日常生活では気にしなくて構いませんが、4月1日生まれの子が早生まれ側（前の学年）に入るのはこの規定によるものです。年度で区切る制度では、この1日の差が効いてきます。
+  </div>
+
+  <h2>この画面では判定できないこと</h2>
+  <ul>
+    <li><b>数え年</b>：表示しているのは満年齢です。七五三や厄年など、数え年を使う場面では計算方法が違います。</li>
+    <li><b>学年</b>：同じ学年でも4月生まれと3月生まれでは、学年途中の年齢が1歳違います。年齢から学年は一意に決まりません。</li>
+    <li><b>制度ごとの適用開始日</b>：成年年齢や保険の区分などは、それぞれの制度が定める基準日で判定されます。実際の手続きでは各機関の案内を確認してください。</li>
+  </ul>
+
+  <h2>和暦や年度の区切りで迷ったら</h2>
+  <div class="rel-grid">
+    <a class="rel" href="article-nenrei-wareki">📖 年齢はいつ上がる？和暦との変換 <span>4月1日生まれが早生まれになる理由</span></a>
+    <a class="rel" href="article-nissu-kazoekata">📖 日数の数え方 ― 初日を入れるか <span>期間の数え方の原則</span></a>
+  </div>
+
+  <h2>よくある質問</h2>
     <div class="faq"><details open><summary>満年齢の数え方ですか？</summary><p>はい。誕生日を迎えた回数で数える満年齢です。基準日の時点でまだ誕生日前なら1歳引いて計算します。</p></details><details><summary>和暦はどこまで対応していますか？</summary><p>令和・平成・昭和・大正・明治に対応しています。生年月日の日付に基づいて元号を判定します。</p></details><details><summary>データは送信されますか？</summary><p>いいえ。すべて端末内で計算します。</p></details></div>
     <h2>ほかの計算ツール</h2>
     <div class="rel-grid"><a class="rel" href="tool-date-calc">📅 日付計算 <span>何日後・何日間・曜日</span></a><a class="rel" href="tool-warikan">💰 割り勘 <span>1人いくらを端数調整</span></a><a class="rel" href="tool-discount">🏷️ 割引価格 <span>％オフ・〇割引の価格</span></a><a class="rel" href="tool-unit">📏 単位換算 <span>長さ・重さ・温度</span></a><a class="rel" href="tool-tax">🧾 消費税計算 <span>税抜⇄税込</span></a><a class="rel" href="/">🧮 ツール一覧 <span>ぱっと計算のツール</span></a></div>

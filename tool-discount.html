@@ -58,6 +58,9 @@
   .rtable{width:100%;border-collapse:collapse;margin-top:10px;} .rtable td{padding:9px 10px;border-bottom:1px solid var(--line);font-size:15px;} .rtable tr:last-child td{border-bottom:none;} .rtable td:last-child{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;}
   .ad{border:1px dashed var(--line);border-radius:14px;padding:14px;text-align:center;color:var(--muted);font-size:12px;background:var(--card);margin:16px 0;}
   .seo h2{font-size:18px;margin:26px 0 10px;}
+  .seo p{font-size:14.5px;line-height:1.9;margin:8px 0;}
+  .seo ul{margin:8px 0;padding-left:22px;} .seo li{font-size:14.5px;line-height:1.9;margin:6px 0;}
+  .note-read{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:14px;line-height:1.9;}
   .howto{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;} @media(max-width:600px){.howto{grid-template-columns:1fr;}}
   .howto .st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;}
   .howto .st .n{width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px;}
@@ -95,7 +98,30 @@
   <section class="seo">
     <h2>使い方（3ステップ）</h2>
     <div class="howto"><div class="st"><div class="n">1</div><b>価格を入れる</b><p>元の価格を入力します。</p></div><div class="st"><div class="n">2</div><b>割引を選ぶ</b><p>％オフ・割引・円オフから選び、値を入れます。</p></div><div class="st"><div class="n">3</div><b>結果を確認</b><p>割引後価格と割引額が出ます。</p></div></div>
-    <h2>よくある質問</h2>
+    
+  <h2>％オフ・〇割引・〇円オフを分けてある訳</h2>
+  <p>この3つは同じ計算に見えて、値札での書かれ方が違います。だから入力の形も分けてあります。</p>
+  <p>「3割引」と「30％オフ」は同じ意味です。1割が10％なので、変換すれば一致する。それでも両方を用意しているのは、<b>手元の値札に書いてある表記のまま入力できるほうが速く、間違えにくい</b>からです。暗算で割からパーセントに直す手間を挟むと、そこで取り違えが起きます。</p>
+  <p>「〇円オフ」を別立てにしているのは、クーポンが定額であることが多いためです。率と定額を同じ欄に入れさせると、単位の取り違えが起きます。</p>
+
+  <div class="note-read">
+    <b>割引の重ねがけは、このツールを2回使ってください。</b>「30％オフのあと、さらに20％オフ」は50％オフになりません。2回目は1回目で減った金額にかかるので、2,000円なら1,120円（44％オフ相当）です。1回で重ねがけを計算する機能は付けていません。順に2回計算するほうが、途中の金額も見えて確実です。
+  </div>
+
+  <h2>この計算だけで判断しないほうがいい場面</h2>
+  <ul>
+    <li><b>ポイント還元との比較</b>：20％割引と20％還元は、同じ額に見えて割引のほうが有利です。還元は満額を払ってから後日戻る形で、有効期限や使い道の制限もあります。この画面では割引しか計算しません。</li>
+    <li><b>送料や手数料がある買い物</b>：割引額より送料のほうが大きいことは珍しくありません。最終支払額で比べてください。</li>
+    <li><b>税抜と税込が混ざる比較</b>：元の価格がどちらか確認しないと、比較の前提が崩れます。</li>
+  </ul>
+
+  <h2>表示の読み方に迷ったら</h2>
+  <div class="rel-grid">
+    <a class="rel" href="article-waribiki-yomikata">📖 「3割引」と「30％オフ」は同じ？ <span>重ねがけと還元の違い</span></a>
+    <a class="rel" href="article-shohizei-hasuu">📖 消費税の税抜・税込と端数処理 <span>値引きと税の順番</span></a>
+  </div>
+
+  <h2>よくある質問</h2>
     <div class="faq"><details open><summary>「〇割引」も計算できますか？</summary><p>はい。「〇割引」を選べば、3割引（30％オフ）のように割単位で計算できます。</p></details><details><summary>端数はどうなりますか？</summary><p>割引後の価格は円未満を四捨五入して表示します。</p></details><details><summary>データは送信されますか？</summary><p>いいえ。すべて端末内で計算します。</p></details></div>
     <h2>ほかの計算ツール</h2>
     <div class="rel-grid"><a class="rel" href="tool-date-calc">📅 日付計算 <span>何日後・何日間・曜日</span></a><a class="rel" href="tool-age">🎂 年齢・和暦 <span>生年月日から年齢・和暦</span></a><a class="rel" href="tool-warikan">💰 割り勘 <span>1人いくらを端数調整</span></a><a class="rel" href="tool-unit">📏 単位換算 <span>長さ・重さ・温度</span></a><a class="rel" href="tool-tax">🧾 消費税計算 <span>税抜⇄税込</span></a><a class="rel" href="/">🧮 ツール一覧 <span>ぱっと計算のツール</span></a></div>

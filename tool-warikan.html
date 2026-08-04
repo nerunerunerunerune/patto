@@ -58,6 +58,9 @@
   .rtable{width:100%;border-collapse:collapse;margin-top:10px;} .rtable td{padding:9px 10px;border-bottom:1px solid var(--line);font-size:15px;} .rtable tr:last-child td{border-bottom:none;} .rtable td:last-child{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;}
   .ad{border:1px dashed var(--line);border-radius:14px;padding:14px;text-align:center;color:var(--muted);font-size:12px;background:var(--card);margin:16px 0;}
   .seo h2{font-size:18px;margin:26px 0 10px;}
+  .seo p{font-size:14.5px;line-height:1.9;margin:8px 0;}
+  .seo ul{margin:8px 0;padding-left:22px;} .seo li{font-size:14.5px;line-height:1.9;margin:6px 0;}
+  .note-read{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:14px;line-height:1.9;}
   .howto{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;} @media(max-width:600px){.howto{grid-template-columns:1fr;}}
   .howto .st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;}
   .howto .st .n{width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px;}
@@ -94,7 +97,30 @@
   <section class="seo">
     <h2>使い方（3ステップ）</h2>
     <div class="howto"><div class="st"><div class="n">1</div><b>金額を入れる</b><p>支払い合計を入力します。</p></div><div class="st"><div class="n">2</div><b>人数と単位</b><p>人数と、端数の切り上げ単位を選びます。</p></div><div class="st"><div class="n">3</div><b>結果を確認</b><p>1人あたりと集金合計が表示されます。</p></div></div>
-    <h2>よくある質問</h2>
+    
+  <h2>切り上げ単位に1,000円を用意していない訳</h2>
+  <p>切り上げの選択肢は、細かい単位までにとどめてあります。1,000円単位を入れていないのは、余りが大きくなりすぎるからです。</p>
+  <p>8人で17,300円なら1人2,163円。これを1,000円単位に切り上げると1人3,000円で、集まるのは24,000円。6,700円も余ります。幹事が受け取れば取りすぎに見えるし、返すなら結局こまかい金額のやりとりが発生する。<b>切り上げの利点だった「集金が速い」が消えてしまいます。</b></p>
+  <p>幹事のおつりと負担調整の額を同時に出しているのも同じ理由です。「1人いくら」だけ分かっても、幹事の手元がいくら余るのか／足りないのかが見えないと、その場で判断できません。</p>
+
+  <div class="note-read">
+    <b>会計の前に方法を宣言しておくと、ほぼ揉めません。</b>「100円単位に切り上げます。余りは次回に回します」と最初に言っておく。金額が出てから決めようとすると、その場の力関係で決まってしまい、後味が悪くなります。
+  </div>
+
+  <h2>この計算では足りない場面</h2>
+  <ul>
+    <li><b>飲まない人がいる会</b>：料理代と飲み物代を分けたいなら、2回に分けて計算してください。1回で傾斜配分まではできません。</li>
+    <li><b>複数人が立て替えている</b>：誰が誰にいくら返すかまでは出ません。立て替えが3件以上あるなら、精算専用のツールのほうが向いています。</li>
+    <li><b>後日回収がある</b>：未払いの管理機能はありません。人数が多い会では、名簿側で管理してください。</li>
+  </ul>
+
+  <h2>端数の決め方に迷ったら</h2>
+  <div class="rel-grid">
+    <a class="rel" href="article-warikan-hasuu">📖 割り勘の端数、どう分けると揉めないか <span>4通りの方法と、幹事の段取り</span></a>
+    <a class="rel" href="article-shohizei-hasuu">📖 消費税の税抜・税込と端数処理 <span>会費に税が絡むとき</span></a>
+  </div>
+
+  <h2>よくある質問</h2>
     <div class="faq"><details open><summary>端数はどう処理されますか？</summary><p>選んだ単位（例：100円）に切り上げて1人あたりを計算します。集金合計と実際の会計との差額（幹事のおつり・負担調整）も表示します。</p></details><details><summary>幹事だけ多め・少なめにできますか？</summary><p>切り上げにより集まる差額が「幹事のおつり／負担調整」として表示されます。これを目安に調整できます。</p></details><details><summary>データは送信されますか？</summary><p>いいえ。すべて端末内で計算します。</p></details></div>
     <h2>ほかの計算ツール</h2>
     <div class="rel-grid"><a class="rel" href="tool-date-calc">📅 日付計算 <span>何日後・何日間・曜日</span></a><a class="rel" href="tool-age">🎂 年齢・和暦 <span>生年月日から年齢・和暦</span></a><a class="rel" href="tool-discount">🏷️ 割引価格 <span>％オフ・〇割引の価格</span></a><a class="rel" href="tool-unit">📏 単位換算 <span>長さ・重さ・温度</span></a><a class="rel" href="tool-tax">🧾 消費税計算 <span>税抜⇄税込</span></a><a class="rel" href="/">🧮 ツール一覧 <span>ぱっと計算のツール</span></a></div>

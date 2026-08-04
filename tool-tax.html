@@ -58,6 +58,9 @@
   .rtable{width:100%;border-collapse:collapse;margin-top:10px;} .rtable td{padding:9px 10px;border-bottom:1px solid var(--line);font-size:15px;} .rtable tr:last-child td{border-bottom:none;} .rtable td:last-child{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;}
   .ad{border:1px dashed var(--line);border-radius:14px;padding:14px;text-align:center;color:var(--muted);font-size:12px;background:var(--card);margin:16px 0;}
   .seo h2{font-size:18px;margin:26px 0 10px;}
+  .seo p{font-size:14.5px;line-height:1.9;margin:8px 0;}
+  .seo ul{margin:8px 0;padding-left:22px;} .seo li{font-size:14.5px;line-height:1.9;margin:6px 0;}
+  .note-read{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:14px;line-height:1.9;}
   .howto{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;} @media(max-width:600px){.howto{grid-template-columns:1fr;}}
   .howto .st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;}
   .howto .st .n{width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px;}
@@ -94,7 +97,27 @@
   <section class="seo">
     <h2>使い方（3ステップ）</h2>
     <div class="howto"><div class="st"><div class="n">1</div><b>金額を入れる</b><p>税抜または税込の金額を入力します。</p></div><div class="st"><div class="n">2</div><b>税率と方向</b><p>税率と、税抜→税込／税込→税抜を選びます。</p></div><div class="st"><div class="n">3</div><b>結果を確認</b><p>金額と消費税額が表示されます。</p></div></div>
-    <h2>よくある質問</h2>
+    
+  <h2>10%と8%を切り替え式にしてある訳</h2>
+  <p>税率を固定せず選べるようにしてあるのは、<b>1枚のレシートに2つの税率が混ざるのが普通だから</b>です。</p>
+  <p>食料品を買えば8%、日用品を買えば10%。合計だけを見て一律10%で割り戻すと、税額が実際と合いません。レシートには税率ごとの区分が印字されているので、そこを見て2回に分けて計算する。そのために切り替えを1タップにしてあります。</p>
+  <p>計算方向（税抜→税込／税込→税抜）も選べます。税込から税抜を出すときに「0.9を掛ける」という間違いが起きやすいためです。1,100円 × 0.9 は990円で、正しい1,000円になりません。割り戻すのであって、同じ率を引くのではない。ここは方向を選ばせて計算式ごと切り替えています。</p>
+
+  <div class="note-read">
+    <b>このツールは端数を切り捨てで表示します。</b>消費税の端数処理は法律で一律に決まっているわけではなく、事業者が方法を選んで継続適用するのが基本です。切り上げや四捨五入を採用している場合は、表示額と1円ずれることがあります。
+  </div>
+
+  <h2>請求書を作る人が注意すべきこと</h2>
+  <p>適格請求書（インボイス）では、<b>一つの請求書につき税率ごとに1回だけ端数処理を行う</b>とされています。明細ごとに税込金額を出して足し上げる方法は認められていません。</p>
+  <p>このツールは1件ずつの計算をするものなので、明細を1行ずつ入れて合算する使い方をすると、その規定から外れた金額になります。請求書を作るなら、税率ごとの小計を出してから最後に1回だけ計算してください。</p>
+
+  <h2>端数処理をもう少し詳しく</h2>
+  <div class="rel-grid">
+    <a class="rel" href="article-shohizei-hasuu">📖 消費税の税抜・税込と端数処理 <span>インボイスでのルールまで</span></a>
+    <a class="rel" href="article-waribiki-yomikata">📖 「3割引」と「30％オフ」は同じ？ <span>値引きと税の順番</span></a>
+  </div>
+
+  <h2>よくある質問</h2>
     <div class="faq"><details open><summary>軽減税率（8%）に対応していますか？</summary><p>はい。10%・8%を選べます。任意の税率で計算したい場合もプルダウンから選べます。</p></details><details><summary>端数はどう処理されますか？</summary><p>税抜→税込は消費税を切り捨て、税込→税抜は税抜額を四捨五入して表示します（一般的な処理）。</p></details><details><summary>データは送信されますか？</summary><p>いいえ。すべて端末内で計算します。</p></details></div>
     <h2>ほかの計算ツール</h2>
     <div class="rel-grid"><a class="rel" href="tool-date-calc">📅 日付計算 <span>何日後・何日間・曜日</span></a><a class="rel" href="tool-age">🎂 年齢・和暦 <span>生年月日から年齢・和暦</span></a><a class="rel" href="tool-warikan">💰 割り勘 <span>1人いくらを端数調整</span></a><a class="rel" href="tool-discount">🏷️ 割引価格 <span>％オフ・〇割引の価格</span></a><a class="rel" href="tool-unit">📏 単位換算 <span>長さ・重さ・温度</span></a><a class="rel" href="/">🧮 ツール一覧 <span>ぱっと計算のツール</span></a></div>

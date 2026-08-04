@@ -58,6 +58,9 @@
   .rtable{width:100%;border-collapse:collapse;margin-top:10px;} .rtable td{padding:9px 10px;border-bottom:1px solid var(--line);font-size:15px;} .rtable tr:last-child td{border-bottom:none;} .rtable td:last-child{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;}
   .ad{border:1px dashed var(--line);border-radius:14px;padding:14px;text-align:center;color:var(--muted);font-size:12px;background:var(--card);margin:16px 0;}
   .seo h2{font-size:18px;margin:26px 0 10px;}
+  .seo p{font-size:14.5px;line-height:1.9;margin:8px 0;}
+  .seo ul{margin:8px 0;padding-left:22px;} .seo li{font-size:14.5px;line-height:1.9;margin:6px 0;}
+  .note-read{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:14px;line-height:1.9;}
   .howto{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;} @media(max-width:600px){.howto{grid-template-columns:1fr;}}
   .howto .st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;}
   .howto .st .n{width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px;}
@@ -100,7 +103,30 @@
   <section class="seo">
     <h2>使い方（3ステップ）</h2>
     <div class="howto"><div class="st"><div class="n">1</div><b>モードを選ぶ</b><p>「期間を計算」か「〇日後/前」を選びます。</p></div><div class="st"><div class="n">2</div><b>日付を入れる</b><p>日付や日数を入力すると自動で計算します。</p></div><div class="st"><div class="n">3</div><b>結果を確認</b><p>日数・週数、または日付と曜日が表示されます。</p></div></div>
-    <h2>よくある質問</h2>
+    
+  <h2>曜日を必ず一緒に出している訳</h2>
+  <p>日数を出すだけなら曜日は要りません。それでも常に表示しているのは、<b>締切が土日祝に当たっているかどうかで、実質的な期限が変わる</b>からです。</p>
+  <p>金融機関の振込も役所の手続きも、営業日にしか処理されません。「30日後」と計算して安心していたら、その日が日曜だった——これは日数の計算が合っていても間に合わない典型例です。数字と曜日を同時に見られるようにしてあるのは、そのためです。</p>
+  <p>「期間を計算」と「〇日後/前」を別のタブに分けてあるのも意図的です。この2つは求めるものが違います。前者は2つの日付の間、後者は起点からの移動。混ぜると入力欄の意味が分かりにくくなるので、切り替え式にしています。</p>
+
+  <div class="note-read">
+    <b>「3日後」と「3日間」は1日ずれます。</b>8月1日を起点にすると、3日後は8月4日、3日間は8月1日〜3日です。契約や締切で「3日以内」と書くと、どちらの意味でも読めてしまいます。計算した結果は「8月4日（火）まで」のように、日付と曜日で相手に伝えてください。
+  </div>
+
+  <h2>この計算では出せないもの</h2>
+  <ul>
+    <li><b>営業日での計算</b>：土日祝を除いた日数は出ません。「5営業日」は週末をまたぐと1週間以上になります。祝日は年によって日付が変わるものもあるため、実際のカレンダーで確認してください。</li>
+    <li><b>「1か月後」</b>：月をまたぐ計算は日数ではなく同じ日付を指します。1月31日の1か月後のように、対応する日が存在しない場合の扱いも絡みます。</li>
+    <li><b>時刻を含む期間</b>：日単位の計算です。時間まで指定する締切には使えません。</li>
+  </ul>
+
+  <h2>数え方でつまずいたら</h2>
+  <div class="rel-grid">
+    <a class="rel" href="article-nissu-kazoekata">📖 日数の数え方 ― 初日を入れるか <span>営業日と暦日、締切の書き方</span></a>
+    <a class="rel" href="article-nenrei-wareki">📖 年齢はいつ上がる？和暦との変換 <span>年度で区切る制度の考え方</span></a>
+  </div>
+
+  <h2>よくある質問</h2>
     <div class="faq"><details open><summary>開始日と終了日はどちらも含まれますか？</summary><p>表示するのは2日付の間の日数（差）です。両端を含む「〇日間」として数えたい場合は+1してお考えください。</p></details><details><summary>曜日も分かりますか？</summary><p>はい。「〇日後/前」では計算結果の日付とあわせて曜日を表示します。</p></details><details><summary>データは送信されますか？</summary><p>いいえ。すべて端末内で計算し、入力は送信されません。</p></details></div>
     <h2>ほかの計算ツール</h2>
     <div class="rel-grid"><a class="rel" href="tool-age">🎂 年齢・和暦 <span>生年月日から年齢・和暦</span></a><a class="rel" href="tool-warikan">💰 割り勘 <span>1人いくらを端数調整</span></a><a class="rel" href="tool-discount">🏷️ 割引価格 <span>％オフ・〇割引の価格</span></a><a class="rel" href="tool-unit">📏 単位換算 <span>長さ・重さ・温度</span></a><a class="rel" href="tool-tax">🧾 消費税計算 <span>税抜⇄税込</span></a><a class="rel" href="/">🧮 ツール一覧 <span>ぱっと計算のツール</span></a></div>

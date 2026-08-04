@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>年齢はいつ上がる？和暦との変換でつまずく点｜ぱっと計算</title>
+<meta name="description" content="年齢が加算されるタイミング、学年の区切りが4月1日生まれで変わる理由、和暦と西暦の変換で間違えやすい箇所をまとめました。">
+<link rel="canonical" href="https://patto.kawatare.studio/article-nenrei-wareki">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="ぱっと計算">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ぱっと計算">
+<meta property="og:title" content="年齢はいつ上がる？和暦との変換でつまずく点">
+<meta property="og:description" content="年齢が加算されるタイミング、学年の区切りが4月1日生まれで変わる理由、和暦と西暦の変換で間違えやすい箇所をまとめました。">
+<meta property="og:url" content="https://patto.kawatare.studio/article-nenrei-wareki">
+<meta property="og:image" content="https://patto.kawatare.studio/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="年齢はいつ上がる？和暦との変換でつまずく点">
+<meta name="twitter:description" content="年齢が加算されるタイミング、学年の区切りが4月1日生まれで変わる理由、和暦と西暦の変換で間違えやすい箇所をまとめました。">
+<meta name="twitter:image" content="https://patto.kawatare.studio/ogp.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"年齢はいつ上がる？和暦との変換でつまずく点","author":{"@type":"Organization","name":"かわたれ studio"},"publisher":{"@type":"Organization","name":"かわたれ studio"},"datePublished":"2026-08-04","dateModified":"2026-08-04","description":"年齢が加算されるタイミング、学年の区切りが4月1日生まれで変わる理由、和暦と西暦の変換で間違えやすい箇所をまとめました。"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"年齢はいつ1つ上がりますか？","acceptedAnswer":{"@type":"Answer","text":"法律上は誕生日の前日が終わる時点で加算されます。日常的には誕生日に歳を取ると考えて問題ありませんが、学年の区切りや年度単位の判定ではこの「前日」の考え方が効いてきます。"}},{"@type":"Question","name":"なぜ4月1日生まれは早生まれになるのですか？","acceptedAnswer":{"@type":"Answer","text":"年齢が誕生日の前日に加算されるためです。4月1日生まれの子は3月31日の終わりに6歳になるので、その年の4月1日から就学することになります。結果として、4月2日生まれから翌年4月1日生まれまでが同じ学年という区切りになります。"}},{"@type":"Question","name":"令和を西暦に直す計算は？","acceptedAnswer":{"@type":"Answer","text":"令和N年に2018を足すと西暦になります。令和8年なら2018 + 8 = 2026年です。平成なら1988を、昭和なら1925を足します。元号が始まった年から1を引いた数を足す、と覚えると思い出しやすくなります。"}},{"@type":"Question","name":"改元の年はどう扱えばよいですか？","acceptedAnswer":{"@type":"Answer","text":"2019年は1月1日から4月30日までが平成31年、5月1日以降が令和元年です。年だけで機械的に変換すると取り違えるので、月日まで見て判断してください。1989年も昭和64年と平成元年が混在しています。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ぱっと計算","item":"https://patto.kawatare.studio/"},{"@type":"ListItem","position":2,"name":"年齢と和暦の数え方","item":"https://patto.kawatare.studio/article-nenrei-wareki"}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RX161KZPB3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RX161KZPB3');</script>
+<style>
+  :root{--bg:#f5f5fb;--card:#ffffff;--ink:#1c1c2e;--ink-2:#5a5a72;--muted:#9797ac;--line:#e6e6f0;
+    --brand:#4f46e5;--brand-d:#3f37c9;--accent:#f59e0b;--good:#0e9f6e;--good-bg:#e7f7f0;
+    --shadow:0 1px 2px rgba(30,30,60,.05),0 8px 22px rgba(30,30,60,.07);}
+  @media (prefers-color-scheme:dark){:root{--bg:#101019;--card:#1a1a27;--ink:#eeeef7;--ink-2:#adadc4;--muted:#78788f;
+    --line:#2a2a3c;--brand:#8b83f5;--brand-d:#b3aef9;--accent:#fbbf24;--good:#3fce97;--good-bg:#14311f;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.45);}}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.85;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--brand);}
+  .sitebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;}
+  .sb-brand{display:flex;align-items:center;gap:9px;font-weight:800;text-decoration:none;color:var(--ink);font-size:16px;}
+  .sb-logo{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-size:16px;}
+  .sb-links{display:flex;gap:13px;font-size:14px;font-weight:700;} .sb-links a{text-decoration:none;color:var(--ink-2);} .sb-links a:hover{color:var(--brand);}
+  .wrap{max-width:880px;margin:0 auto;padding:24px 18px 70px;}
+  .hero{text-align:center;padding:22px 10px 6px;}
+  .hero h1{font-size:29px;margin:6px 0 12px;line-height:1.32;}
+  .hero p{font-size:15.5px;color:var(--ink-2);max-width:620px;margin:0 auto;}
+  .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0 6px;}
+  .chip{font-size:12.5px;font-weight:800;color:var(--brand);background:#ecebfb;padding:6px 13px;border-radius:20px;}
+  @media (prefers-color-scheme:dark){.chip{background:#22223a;}}
+  h2{font-size:21px;margin:40px 0 6px;} .lead2{color:var(--ink-2);font-size:14px;margin:0 0 14px;}
+  .tools{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;} @media(max-width:720px){.tools{grid-template-columns:1fr 1fr;}} @media(max-width:460px){.tools{grid-template-columns:1fr;}}
+  .tool{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);transition:.15s;}
+  .tool:hover{transform:translateY(-2px);border-color:var(--brand);}
+  .tool .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:25px;background:var(--bg);}
+  .tool h3{margin:12px 0 4px;font-size:17px;} .tool p{margin:0;font-size:13px;color:var(--ink-2);}
+  .tool .go{margin-top:10px;font-size:13px;font-weight:800;color:var(--brand);}
+  .use{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:6px;} @media(max-width:720px){.use{grid-template-columns:1fr;}}
+  .use .u{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px;} .use .u b{display:block;margin-bottom:5px;} .use .u p{margin:0;font-size:13.5px;color:var(--ink-2);}
+  .faq{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:6px 18px;}
+  .faq details{border-bottom:1px solid var(--line);padding:13px 0;} .faq details:last-child{border-bottom:none;}
+  .faq summary{font-weight:800;cursor:pointer;font-size:15px;} .faq p{font-size:13.5px;color:var(--ink-2);margin:8px 0 0;}
+  .crumb{font-size:12.5px;color:var(--muted);margin:2px 0 14px;} .crumb a{color:var(--ink-2);text-decoration:none;}
+  .page-h1{font-size:26px;margin:4px 0 6px;} .lead{font-size:15px;color:var(--ink-2);margin:0 0 20px;}
+  .cardp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);}
+  .prose h2{font-size:19px;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line);} .prose h2:first-child{margin-top:4px;}
+  .prose p{margin:8px 0;font-size:14.5px;} .prose ul{margin:8px 0;padding-left:22px;} .prose li{margin:6px 0;font-size:14.5px;}
+  .prose dt{font-weight:800;font-size:14px;margin-top:12px;} .prose dd{margin:2px 0 0;font-size:14.5px;color:var(--ink-2);}
+  .cta{display:inline-block;text-decoration:none;font-weight:800;font-size:15px;padding:12px 22px;border-radius:13px;background:var(--brand);color:#fff;margin-top:8px;}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);text-align:center;line-height:2;}
+  footer a{color:var(--ink-2);text-decoration:none;margin:0 7px;}
+
+  .prose h3{font-size:16px;margin:20px 0 6px;}
+  .prose ol{margin:8px 0;padding-left:22px;} .prose ol li{margin:8px 0;font-size:14.5px;}
+  .prose table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px;} .prose td,.prose th{border:1px solid var(--line);padding:7px 10px;text-align:left;}
+  .rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;} @media(max-width:600px){.rel-grid{grid-template-columns:1fr;}}
+  .rel{display:block;text-decoration:none;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:800;} .rel:hover{border-color:var(--brand);}
+  .rel span{display:block;font-size:12px;color:var(--ink-2);font-weight:500;margin-top:2px;}
+  .note{background:var(--good-bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0;font-size:13.5px;color:var(--ink-2);}
+</style>
+</head>
+<body>
+<nav class="sitebar"><a class="sb-brand" href="/"><span class="sb-logo">🧮</span>ぱっと計算</a><div class="sb-links"><a href="/">ツール一覧</a><a href="about">このサイトについて</a></div></nav>
+<div class="wrap">
+  <div class="crumb"><a href="/">ホーム</a> ／ 年齢と和暦の数え方</div>
+  <h1 class="page-h1">年齢はいつ上がる？和暦との変換でつまずく点</h1>
+  <p class="lead">書類の年齢欄と学年の話は、誕生日の「前日」を知ると一気に腑に落ちます。</p>
+  <div class="cardp prose">
+
+  <h2>結論</h2>
+  <p>年齢は、法律上<b>誕生日の前日が終わる時点</b>で1つ上がります。誕生日当日ではありません。ふだんの生活では誕生日に歳を取ると考えて差し支えありませんが、この「前日」の考え方を知っていると、学年の区切りや書類の年齢欄で迷わなくなります。</p>
+  <p>和暦の変換は、<b>元号が変わった年をまたぐとき</b>だけ注意が要ります。それ以外は単純な足し引きです。</p>
+
+  <h2>なぜ「前日」なのか</h2>
+  <p>年齢の数え方は「年齢計算ニ関スル法律」によって定められており、出生の日から起算します。そのため、誕生日の前日が終わる瞬間に1歳加算される、という扱いになります。</p>
+  <p>この考え方が実際に効いてくるのが<b>学年の区切り</b>です。学校教育法では、満6歳に達した日の翌日以後の最初の4月1日から小学校に就学するとされています。4月1日生まれの子は、3月31日の終わりに6歳になるため、その年の4月1日から就学することになります。結果として、<b>4月1日生まれは早生まれ側（前の学年）に入る</b>のです。</p>
+  <p>「4月2日生まれから翌年4月1日生まれまでが同じ学年」という区切りは、ここから来ています。</p>
+
+  <h2>和暦と西暦の変換</h2>
+  <table><tr><th>元号</th><th>期間</th><th>西暦への変換</th></tr>
+  <tr><td>昭和</td><td>1926年12月25日〜1989年1月7日</td><td>昭和N年 ＝ 1925 + N</td></tr>
+  <tr><td>平成</td><td>1989年1月8日〜2019年4月30日</td><td>平成N年 ＝ 1988 + N</td></tr>
+  <tr><td>令和</td><td>2019年5月1日〜</td><td>令和N年 ＝ 2018 + N</td></tr>
+  </table>
+  <p>足す数は「元号が始まった年から1を引いた数」と覚えると、思い出しやすくなります。令和なら2019 − 1 ＝ 2018です。</p>
+
+  <h2>変換でつまずく点</h2>
+  <ul>
+    <li><b>改元の年は2つの元号が混在する</b>：2019年は1月から4月30日までが平成31年、5月1日からが令和元年です。年だけで変換すると、この期間を取り違えます。1989年も同様に昭和64年と平成元年が混在します。</li>
+    <li><b>「元年」は1年</b>：令和元年は令和1年と同じです。計算するときは1として扱います。</li>
+    <li><b>書類の様式が和暦のみ</b>：公的書類には和暦欄しかないものがあります。生年月日を和暦で書く場面では、改元の年に生まれた方は特に確認が必要です。</li>
+  </ul>
+
+  <h2>干支は12年で一周する</h2>
+  <p>干支（十二支）は子・丑・寅・卯・辰・巳・午・未・申・酉・戌・亥の12種類で、1年ごとに進み12年で一周します。西暦から求める場合は、<b>西暦を12で割った余り</b>で判定できます。余りが4なら子、5なら丑……という対応です。2020年は 2020 ÷ 12 の余りが4なので子年でした。</p>
+  <p>注意点として、干支の切り替わりを元日とするか立春とするかは流儀が分かれます。一般的な年賀状や履歴書の感覚では元日区切りで問題ありませんが、占いなどの文脈では立春区切りを使うことがあります。用途に応じて確認してください。</p>
+  <p>正式には十干（甲乙丙丁…）と組み合わせた60通りの「干支（かんし）」があり、60年で一周します。還暦が60歳の節目とされるのは、生まれた年と同じ干支に戻るためです。</p>
+
+  <h2>年齢の節目と、必要になる手続き</h2>
+  <p>年齢によって扱いが変わる場面はいくつもあります。代表的なものを挙げておきます。制度は改正されることがあるため、実際の手続きの際は各機関の最新の案内を確認してください。</p>
+  <ul>
+    <li><b>18歳</b>：成年年齢。2022年4月1日から20歳ではなく18歳になりました。契約が単独でできるようになる一方、取り消しの保護がなくなる点に注意が必要です。</li>
+    <li><b>20歳</b>：飲酒・喫煙が可能になる年齢は、成年年齢の引き下げ後も20歳のまま維持されています。</li>
+    <li><b>65歳</b>：介護保険の第1号被保険者になる年齢です。</li>
+  </ul>
+  <p>いずれも「〇歳に達した日」が基準になるので、前述の「誕生日の前日に加算される」考え方が関係してきます。年度で区切る制度では、その年度中に何歳になるかで判定されることもあります。</p>
+
+  <h2>年齢欄で迷いやすい場面</h2>
+  <h3>「〇月〇日現在の年齢」</h3>
+  <p>応募資格や統計調査でよく見る書き方です。基準日時点で何歳かを書くので、いま何歳かではありません。誕生日が基準日の直後にある場合、1歳違ってきます。</p>
+  <h3>「満年齢」と「数え年」</h3>
+  <p>現在の書類はほとんどが満年齢です。数え年は生まれた時点を1歳とし、正月ごとに1つ加える数え方で、七五三や厄年など一部の慣習で使われます。指定がなければ満年齢と考えて構いませんが、神社などの案内では数え年で書かれていることがあります。</p>
+  <h3>「〇年〇月生まれ」だけで年齢を書く</h3>
+  <p>日まで書かないと、基準日によって1歳変わることがあります。年齢が要件になる場面では、生年月日を省略せずに記入してください。</p>
+  <h3>学年と年齢が一致しない</h3>
+  <p>同じ学年でも、4月生まれと3月生まれでは学年途中の年齢が1歳違います。学年から年齢を逆算するときは、誕生日が来ているかどうかを確認してください。</p>
+
+  <p>なお、書類に和暦で記入する場面はまだ多く残っていますが、システム上は西暦で管理されていることがほとんどです。両方を並べて控えておくと、問い合わせのときに話が早くなります。特に改元をまたぐ年に生まれた方や、古い証明書を扱う場面では、変換を一度確認しておくと安心です。</p>
+
+  <h2>今すぐ使えるツール</h2>
+  <p><a href="tool-age">年齢・和暦</a>は、生年月日を入れると満年齢・和暦・干支をまとめて表示します。基準日を変えて「その日時点で何歳か」も確認できるので、応募資格の判定などにそのまま使えます。入力した情報は端末の中だけで扱われ、外部には送信されません。</p>
+  <p>日数や期間を数えたい場合は<a href="tool-date-calc">日付計算</a>が使えます。</p>
+  <p>なお、生年月日は個人情報にあたります。このサイトのツールはすべて端末内で計算し、入力内容をサーバーへ送信しませんが、一般には、生年月日の入力を求めるサービスがその情報をどう扱うかを確認しておくことをおすすめします。</p>
+
+
+  <h2>よくある質問</h2>
+  <h3>年齢はいつ1つ上がりますか？</h3>
+  <p>法律上は誕生日の前日が終わる時点で加算されます。日常的には誕生日に歳を取ると考えて問題ありませんが、学年の区切りや年度単位の判定ではこの「前日」の考え方が効いてきます。</p>
+  <h3>なぜ4月1日生まれは早生まれになるのですか？</h3>
+  <p>年齢が誕生日の前日に加算されるためです。4月1日生まれの子は3月31日の終わりに6歳になるので、その年の4月1日から就学することになります。結果として、4月2日生まれから翌年4月1日生まれまでが同じ学年という区切りになります。</p>
+  <h3>令和を西暦に直す計算は？</h3>
+  <p>令和N年に2018を足すと西暦になります。令和8年なら2018 + 8 = 2026年です。平成なら1988を、昭和なら1925を足します。元号が始まった年から1を引いた数を足す、と覚えると思い出しやすくなります。</p>
+  <h3>改元の年はどう扱えばよいですか？</h3>
+  <p>2019年は1月1日から4月30日までが平成31年、5月1日以降が令和元年です。年だけで機械的に変換すると取り違えるので、月日まで見て判断してください。1989年も昭和64年と平成元年が混在しています。</p>
+
+  <h2>関連ツール</h2>
+  <div class="rel-grid">
+    <a class="rel" href="tool-age">🎂 年齢・和暦 <span>生年月日から年齢・和暦・干支</span></a>
+    <a class="rel" href="tool-date-calc">📅 日付計算 <span>何日後・何日間・曜日を計算</span></a>
+  </div>
+
+<div class="note"><b>ご注意。</b>この記事は一般的な考え方をまとめたものです。契約や公的手続きなど正確な取り扱いが必要な場面では、関係先の案内や専門家の情報をご確認ください。制度は改正されることがあります。</div>
+
+  <div><a class="cta" href="/">ツール一覧を見る</a></div>
+  </div>
+  <footer><div><a href="/">ツール一覧</a>・<a href="about">このサイトについて</a>・<a href="privacy">プライバシー</a>・<a href="terms">利用規約</a>・<a href="https://kawatare.studio/">かわたれ studio</a></div><div>ぱっと計算 ・ 最終更新：2026-08-04</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消費税の税抜・税込と、端数処理の考え方｜ぱっと計算</title>
+<meta name="description" content="税抜から税込、税込から税抜の計算方法と、1円未満の端数をどう扱うか。軽減税率やインボイス制度での端数処理のルールも整理しました。">
+<link rel="canonical" href="https://patto.kawatare.studio/article-shohizei-hasuu">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="ぱっと計算">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ぱっと計算">
+<meta property="og:title" content="消費税の税抜・税込と、端数処理の考え方">
+<meta property="og:description" content="税抜から税込、税込から税抜の計算方法と、1円未満の端数をどう扱うか。軽減税率やインボイス制度での端数処理のルールも整理しました。">
+<meta property="og:url" content="https://patto.kawatare.studio/article-shohizei-hasuu">
+<meta property="og:image" content="https://patto.kawatare.studio/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="消費税の税抜・税込と、端数処理の考え方">
+<meta name="twitter:description" content="税抜から税込、税込から税抜の計算方法と、1円未満の端数をどう扱うか。軽減税率やインボイス制度での端数処理のルールも整理しました。">
+<meta name="twitter:image" content="https://patto.kawatare.studio/ogp.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"消費税の税抜・税込と、端数処理の考え方","author":{"@type":"Organization","name":"かわたれ studio"},"publisher":{"@type":"Organization","name":"かわたれ studio"},"datePublished":"2026-08-04","dateModified":"2026-08-04","description":"税抜から税込、税込から税抜の計算方法と、1円未満の端数をどう扱うか。軽減税率やインボイス制度での端数処理のルールも整理しました。"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"税込価格から税抜価格を出す計算式は？","acceptedAnswer":{"@type":"Answer","text":"税込価格を1.1で割ります（軽減税率8%なら1.08で割ります）。税込1,100円なら1,100 ÷ 1.1 = 1,000円です。よくある間違いは0.9を掛ける方法で、これでは990円になり正しい金額になりません。"}},{"@type":"Question","name":"1円未満の端数は切り捨てと四捨五入のどちらですか？","acceptedAnswer":{"@type":"Answer","text":"法律で一律に定められているわけではなく、事業者が方法を選んで継続的に適用するのが基本です。切り捨て・切り上げ・四捨五入のいずれも取り得ますが、取引ごとに変えるのではなく、一貫した方法を使ってください。"}},{"@type":"Question","name":"軽減税率の8%はどんなものが対象ですか？","acceptedAnswer":{"@type":"Answer","text":"飲食料品（酒類と外食を除く）と、週2回以上発行される定期購読の新聞が主な対象です。同じ商品でも、持ち帰りなら8%、店内飲食なら外食にあたり10%になります。判断に迷う取引は国税庁の案内で確認してください。"}},{"@type":"Question","name":"インボイスでは端数処理に決まりがありますか？","acceptedAnswer":{"@type":"Answer","text":"あります。適格請求書では、一つの請求書につき税率ごとに1回だけ端数処理を行うこととされています。商品明細ごとに端数処理をして合算する方法は認められていません。請求書を発行する立場の方は、システムの設定がこれに沿っているか確認してください。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ぱっと計算","item":"https://patto.kawatare.studio/"},{"@type":"ListItem","position":2,"name":"消費税の端数処理","item":"https://patto.kawatare.studio/article-shohizei-hasuu"}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RX161KZPB3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RX161KZPB3');</script>
+<style>
+  :root{--bg:#f5f5fb;--card:#ffffff;--ink:#1c1c2e;--ink-2:#5a5a72;--muted:#9797ac;--line:#e6e6f0;
+    --brand:#4f46e5;--brand-d:#3f37c9;--accent:#f59e0b;--good:#0e9f6e;--good-bg:#e7f7f0;
+    --shadow:0 1px 2px rgba(30,30,60,.05),0 8px 22px rgba(30,30,60,.07);}
+  @media (prefers-color-scheme:dark){:root{--bg:#101019;--card:#1a1a27;--ink:#eeeef7;--ink-2:#adadc4;--muted:#78788f;
+    --line:#2a2a3c;--brand:#8b83f5;--brand-d:#b3aef9;--accent:#fbbf24;--good:#3fce97;--good-bg:#14311f;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.45);}}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.85;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--brand);}
+  .sitebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;}
+  .sb-brand{display:flex;align-items:center;gap:9px;font-weight:800;text-decoration:none;color:var(--ink);font-size:16px;}
+  .sb-logo{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-size:16px;}
+  .sb-links{display:flex;gap:13px;font-size:14px;font-weight:700;} .sb-links a{text-decoration:none;color:var(--ink-2);} .sb-links a:hover{color:var(--brand);}
+  .wrap{max-width:880px;margin:0 auto;padding:24px 18px 70px;}
+  .hero{text-align:center;padding:22px 10px 6px;}
+  .hero h1{font-size:29px;margin:6px 0 12px;line-height:1.32;}
+  .hero p{font-size:15.5px;color:var(--ink-2);max-width:620px;margin:0 auto;}
+  .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0 6px;}
+  .chip{font-size:12.5px;font-weight:800;color:var(--brand);background:#ecebfb;padding:6px 13px;border-radius:20px;}
+  @media (prefers-color-scheme:dark){.chip{background:#22223a;}}
+  h2{font-size:21px;margin:40px 0 6px;} .lead2{color:var(--ink-2);font-size:14px;margin:0 0 14px;}
+  .tools{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;} @media(max-width:720px){.tools{grid-template-columns:1fr 1fr;}} @media(max-width:460px){.tools{grid-template-columns:1fr;}}
+  .tool{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);transition:.15s;}
+  .tool:hover{transform:translateY(-2px);border-color:var(--brand);}
+  .tool .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:25px;background:var(--bg);}
+  .tool h3{margin:12px 0 4px;font-size:17px;} .tool p{margin:0;font-size:13px;color:var(--ink-2);}
+  .tool .go{margin-top:10px;font-size:13px;font-weight:800;color:var(--brand);}
+  .use{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:6px;} @media(max-width:720px){.use{grid-template-columns:1fr;}}
+  .use .u{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px;} .use .u b{display:block;margin-bottom:5px;} .use .u p{margin:0;font-size:13.5px;color:var(--ink-2);}
+  .faq{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:6px 18px;}
+  .faq details{border-bottom:1px solid var(--line);padding:13px 0;} .faq details:last-child{border-bottom:none;}
+  .faq summary{font-weight:800;cursor:pointer;font-size:15px;} .faq p{font-size:13.5px;color:var(--ink-2);margin:8px 0 0;}
+  .crumb{font-size:12.5px;color:var(--muted);margin:2px 0 14px;} .crumb a{color:var(--ink-2);text-decoration:none;}
+  .page-h1{font-size:26px;margin:4px 0 6px;} .lead{font-size:15px;color:var(--ink-2);margin:0 0 20px;}
+  .cardp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);}
+  .prose h2{font-size:19px;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line);} .prose h2:first-child{margin-top:4px;}
+  .prose p{margin:8px 0;font-size:14.5px;} .prose ul{margin:8px 0;padding-left:22px;} .prose li{margin:6px 0;font-size:14.5px;}
+  .prose dt{font-weight:800;font-size:14px;margin-top:12px;} .prose dd{margin:2px 0 0;font-size:14.5px;color:var(--ink-2);}
+  .cta{display:inline-block;text-decoration:none;font-weight:800;font-size:15px;padding:12px 22px;border-radius:13px;background:var(--brand);color:#fff;margin-top:8px;}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);text-align:center;line-height:2;}
+  footer a{color:var(--ink-2);text-decoration:none;margin:0 7px;}
+
+  .prose h3{font-size:16px;margin:20px 0 6px;}
+  .prose ol{margin:8px 0;padding-left:22px;} .prose ol li{margin:8px 0;font-size:14.5px;}
+  .prose table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px;} .prose td,.prose th{border:1px solid var(--line);padding:7px 10px;text-align:left;}
+  .rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;} @media(max-width:600px){.rel-grid{grid-template-columns:1fr;}}
+  .rel{display:block;text-decoration:none;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:800;} .rel:hover{border-color:var(--brand);}
+  .rel span{display:block;font-size:12px;color:var(--ink-2);font-weight:500;margin-top:2px;}
+  .note{background:var(--good-bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0;font-size:13.5px;color:var(--ink-2);}
+</style>
+</head>
+<body>
+<nav class="sitebar"><a class="sb-brand" href="/"><span class="sb-logo">🧮</span>ぱっと計算</a><div class="sb-links"><a href="/">ツール一覧</a><a href="about">このサイトについて</a></div></nav>
+<div class="wrap">
+  <div class="crumb"><a href="/">ホーム</a> ／ 消費税の端数処理</div>
+  <h1 class="page-h1">消費税の税抜・税込と、端数処理の考え方</h1>
+  <p class="lead">計算式そのものより、端数をどこで処理するかで金額が変わります。</p>
+  <div class="cardp prose">
+
+  <h2>結論</h2>
+  <p>消費税の計算式はごく単純です。税抜から税込は<b>1.1倍</b>（軽減税率なら1.08倍）、税込から税抜は<b>1.1で割る</b>だけです。</p>
+  <p>迷いが生じるのは計算式ではなく<b>1円未満の端数</b>です。ここは「必ずこうしなければならない」と一律に決まっているわけではなく、事業者が方法を選んで継続的に適用するのが基本です。ただし適格請求書（インボイス）では、端数処理の回数にルールがあります。</p>
+
+  <h2>基本の計算</h2>
+  <table><tr><th>やりたいこと</th><th>計算</th><th>例（税率10%）</th></tr>
+  <tr><td>税抜 → 税込</td><td>税抜 × 1.1</td><td>1,000円 → 1,100円</td></tr>
+  <tr><td>税込 → 税抜</td><td>税込 ÷ 1.1</td><td>1,100円 → 1,000円</td></tr>
+  <tr><td>税込 → 税額のみ</td><td>税込 ÷ 1.1 × 0.1</td><td>1,100円 → 100円</td></tr>
+  </table>
+  <p>軽減税率（8%）の場合は、1.1を1.08に読み替えます。よくある間違いは、税込から税抜を出すときに「税込 × 0.9」としてしまうことです。1,100円 × 0.9 は990円で、正しい1,000円になりません。<b>割り戻すのであって、同じ率を引くのではない</b>という点に注意してください。</p>
+
+  <h2>軽減税率（8%）はどれに適用されるか</h2>
+  <p>2019年10月から、標準税率10%と軽減税率8%の2つが併存しています。軽減税率の対象は、おおまかに次の2つです。</p>
+  <ul>
+    <li><b>飲食料品</b>（酒類・外食を除く）：スーパーで買う食材、持ち帰りの弁当などが該当します。店内で飲食する場合は外食にあたり、標準税率です。</li>
+    <li><b>週2回以上発行される新聞</b>（定期購読契約に基づくもの）</li>
+  </ul>
+  <p>同じ商品でも、持ち帰りか店内飲食かで税率が変わるのが分かりにくい部分です。判断に迷う取引がある場合は、国税庁の案内で個別に確認してください。</p>
+
+  <h2>端数処理は「いつ」行うかで金額が変わる</h2>
+  <p>ここがいちばん実務で問題になる箇所です。たとえば税抜105円の商品を3個買った場合、次の2通りで結果が変わります。</p>
+  <ul>
+    <li><b>商品ごとに処理</b>：105 × 1.1 = 115.5 → 115円（切り捨て）。これを3個で345円。</li>
+    <li><b>合計してから処理</b>：105 × 3 = 315円。315 × 1.1 = 346.5 → 346円（切り捨て）。</li>
+  </ul>
+  <p>1円の差ですが、件数が増えれば積み上がります。<b>適格請求書（インボイス）では、一つの請求書につき税率ごとに1回だけ端数処理を行う</b>とされており、商品ごとに端数処理を行って合算する方法は認められていません。請求書を発行する立場なら、ここは押さえておく必要があります。</p>
+  <p>切り上げ・切り捨て・四捨五入のどれを選ぶかは事業者の判断ですが、<b>選んだ方法を継続して使う</b>ことが基本です。取引ごとに有利な方法へ変えると、整合が取れなくなります。</p>
+
+  <h2>つまずきやすい点</h2>
+  <ul>
+    <li><b>税込価格から0.1を引いて税額とする</b>：税込1,100円の税額は110円ではなく100円です。税込には既に税が含まれているため、割り戻して計算します。</li>
+    <li><b>総額表示を忘れる</b>：消費者向けの価格表示は、税込価格が分かる形にする必要があります。</li>
+    <li><b>税率ごとに分けずに合算する</b>：8%と10%が混在する取引では、税率ごとに分けて計算します。まとめて計算すると税額が合いません。</li>
+    <li><b>割引と税の順番を取り違える</b>：値引き後の金額に税を掛けるのか、税込価格から値引くのかで結果が変わります。どちらの順で計算するかを先に決めてください。</li>
+  </ul>
+  <p>いずれも「計算式を知らない」ことではなく、<b>どの金額に対して何をするか</b>を取り違えることで起きます。手を動かす前に、いま扱っている数字が税抜なのか税込なのかを声に出して確認するだけでも、間違いはかなり減ります。</p>
+
+  <h2>税率が変わったときに気をつけること</h2>
+  <p>消費税率は過去に何度か変更されており、今後も改正の可能性があります。実務で影響が出やすいのは、<b>税率の切り替え日をまたぐ取引</b>です。</p>
+  <p>基本的な考え方は、資産の譲渡やサービスの提供が「いつ行われたか」で判断されます。契約日や支払日ではなく、実際に商品を引き渡した日・サービスを提供した日が基準になるのが原則です。継続的なサービスや工事など、期間にまたがるものには経過措置が設けられることがあります。</p>
+  <p>ツールで計算するときも、<b>その取引に適用される税率を自分で選ぶ</b>必要があります。自動的に判定してくれるわけではないので、対象がどちらの税率かを確認したうえで計算してください。判断が難しい取引は、国税庁の案内や税理士に確認するのが確実です。</p>
+
+  <h2>実務でよく出てくる場面</h2>
+  <h3>見積書・請求書をつくるとき</h3>
+  <p>明細ごとに税込金額を書くのではなく、税抜の小計を出してから税率ごとに消費税額を計算するのが基本の形です。適格請求書では税率ごとに1回だけ端数処理を行うため、この順序で作ると自然にルールに沿います。逆に、明細行ごとに税込金額を出して足し上げる作り方は、金額がずれる原因になります。</p>
+  <h3>経費精算をするとき</h3>
+  <p>レシートに8%と10%が混在していることがあります。合計だけを見て一律10%で割り戻すと、税額が実際と合いません。レシートには税率ごとの区分が記載されているので、そこを見て分けて計算してください。特に飲食料品を含む買い物では混在が起きやすくなります。</p>
+  <h3>価格を決めるとき</h3>
+  <p>「税抜1,000円」を基準に決めると、税込は1,100円と半端になります。逆に「税込1,000円」を基準にすると税抜が909.09…円となり、こちらも半端です。どちらを基準にするかは、見せたい価格がどちらかで決めてください。消費者向けなら税込で切りのよい数字にしたほうが伝わりやすく、事業者向けなら税抜基準のほうが計算しやすくなります。</p>
+
+  <h2>今すぐ使えるツール</h2>
+  <p><a href="tool-tax">消費税計算</a>は、税抜と税込を相互に変換し、税額も同時に表示します。10%と8%を切り替えられるので、軽減税率が混ざる場面でも確認しやすくなっています。入力した金額は端末の中だけで扱われます。</p>
+  <p>値引きと組み合わせる場合は<a href="tool-discount">割引価格</a>、会計を分ける場合は<a href="tool-warikan">割り勘</a>も合わせて使えます。</p>
+
+
+  <h2>よくある質問</h2>
+  <h3>税込価格から税抜価格を出す計算式は？</h3>
+  <p>税込価格を1.1で割ります（軽減税率8%なら1.08で割ります）。税込1,100円なら1,100 ÷ 1.1 = 1,000円です。よくある間違いは0.9を掛ける方法で、これでは990円になり正しい金額になりません。</p>
+  <h3>1円未満の端数は切り捨てと四捨五入のどちらですか？</h3>
+  <p>法律で一律に定められているわけではなく、事業者が方法を選んで継続的に適用するのが基本です。切り捨て・切り上げ・四捨五入のいずれも取り得ますが、取引ごとに変えるのではなく、一貫した方法を使ってください。</p>
+  <h3>軽減税率の8%はどんなものが対象ですか？</h3>
+  <p>飲食料品（酒類と外食を除く）と、週2回以上発行される定期購読の新聞が主な対象です。同じ商品でも、持ち帰りなら8%、店内飲食なら外食にあたり10%になります。判断に迷う取引は国税庁の案内で確認してください。</p>
+  <h3>インボイスでは端数処理に決まりがありますか？</h3>
+  <p>あります。適格請求書では、一つの請求書につき税率ごとに1回だけ端数処理を行うこととされています。商品明細ごとに端数処理をして合算する方法は認められていません。請求書を発行する立場の方は、システムの設定がこれに沿っているか確認してください。</p>
+
+  <h2>関連ツール</h2>
+  <div class="rel-grid">
+    <a class="rel" href="tool-tax">％ 消費税計算 <span>税抜⇄税込と税額を表示</span></a>
+    <a class="rel" href="tool-discount">🏷️ 割引価格 <span>％オフ・〇割引を計算</span></a>
+  </div>
+
+<div class="note"><b>ご注意。</b>この記事は一般的な考え方をまとめたものです。税額の確定や書類の要件など、正確な取り扱いが必要な場面では、国税庁の案内や税理士など専門家の情報をご確認ください。制度は改正されることがあります。</div>
+
+  <div><a class="cta" href="/">ツール一覧を見る</a></div>
+  </div>
+  <footer><div><a href="/">ツール一覧</a>・<a href="about">このサイトについて</a>・<a href="privacy">プライバシー</a>・<a href="terms">利用規約</a>・<a href="https://kawatare.studio/">かわたれ studio</a></div><div>ぱっと計算 ・ 最終更新：2026-08-04</div></footer>
+</div>
+</body>
+</html>

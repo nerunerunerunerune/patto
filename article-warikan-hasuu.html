@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>割り勘の端数、どう分けると揉めないか｜ぱっと計算</title>
+<meta name="description" content="割り勘で必ず出る「1円単位の端数」をどう扱うか。よく使われる4つの方法と、それぞれが向く場面・向かない場面を整理しました。">
+<link rel="canonical" href="https://patto.kawatare.studio/article-warikan-hasuu">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="ぱっと計算">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ぱっと計算">
+<meta property="og:title" content="割り勘の端数、どう分けると揉めないか">
+<meta property="og:description" content="割り勘で必ず出る「1円単位の端数」をどう扱うか。よく使われる4つの方法と、それぞれが向く場面・向かない場面を整理しました。">
+<meta property="og:url" content="https://patto.kawatare.studio/article-warikan-hasuu">
+<meta property="og:image" content="https://patto.kawatare.studio/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="割り勘の端数、どう分けると揉めないか">
+<meta name="twitter:description" content="割り勘で必ず出る「1円単位の端数」をどう扱うか。よく使われる4つの方法と、それぞれが向く場面・向かない場面を整理しました。">
+<meta name="twitter:image" content="https://patto.kawatare.studio/ogp.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"割り勘の端数、どう分けると揉めないか","author":{"@type":"Organization","name":"かわたれ studio"},"publisher":{"@type":"Organization","name":"かわたれ studio"},"datePublished":"2026-08-04","dateModified":"2026-08-04","description":"割り勘で必ず出る「1円単位の端数」をどう扱うか。よく使われる4つの方法と、それぞれが向く場面・向かない場面を整理しました。"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"端数は切り上げと切り捨て、どちらがよいですか？","acceptedAnswer":{"@type":"Answer","text":"切り上げをおすすめします。切り捨てにすると集めた合計が支払額に届かず、その差額を誰かが負担することになります。切り上げなら必ず足りますし、余りの使い道を先に決めておけば不満も出にくくなります。"}},{"@type":"Question","name":"切り上げの単位はどれくらいが適切ですか？","acceptedAnswer":{"@type":"Answer","text":"100円単位が使いやすく、多くても500円単位までにとどめるのが無難です。1,000円単位にすると余りが大きくなり、集めすぎている印象を与えます。人数が多いほど余りの総額は膨らむので、単位は小さめのほうが安全です。"}},{"@type":"Question","name":"飲まない人の会費はどう決めればよいですか？","acceptedAnswer":{"@type":"Answer","text":"料理代を全員で等分し、飲み物代だけを飲んだ人で分ける2段階方式がよく使われます。厳密な精算ではありませんが手間が少なく、不公平感の大半は解消できます。誘う段階で伝えておくと、当日の交渉になりません。"}},{"@type":"Question","name":"当日キャンセルの人の分はどうすればよいですか？","acceptedAnswer":{"@type":"Answer","text":"あらかじめルールを決めておくのが唯一の対策です。「前日以降のキャンセルは会費をいただきます」と告知しておけば、幹事の持ち出しを防げます。決めていないと幹事が黙って負担する形になりやすく、これが幹事の負担感の主な原因です。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ぱっと計算","item":"https://patto.kawatare.studio/"},{"@type":"ListItem","position":2,"name":"割り勘の端数、どう分ける？","item":"https://patto.kawatare.studio/article-warikan-hasuu"}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RX161KZPB3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RX161KZPB3');</script>
+<style>
+  :root{--bg:#f5f5fb;--card:#ffffff;--ink:#1c1c2e;--ink-2:#5a5a72;--muted:#9797ac;--line:#e6e6f0;
+    --brand:#4f46e5;--brand-d:#3f37c9;--accent:#f59e0b;--good:#0e9f6e;--good-bg:#e7f7f0;
+    --shadow:0 1px 2px rgba(30,30,60,.05),0 8px 22px rgba(30,30,60,.07);}
+  @media (prefers-color-scheme:dark){:root{--bg:#101019;--card:#1a1a27;--ink:#eeeef7;--ink-2:#adadc4;--muted:#78788f;
+    --line:#2a2a3c;--brand:#8b83f5;--brand-d:#b3aef9;--accent:#fbbf24;--good:#3fce97;--good-bg:#14311f;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.45);}}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.85;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--brand);}
+  .sitebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;}
+  .sb-brand{display:flex;align-items:center;gap:9px;font-weight:800;text-decoration:none;color:var(--ink);font-size:16px;}
+  .sb-logo{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-size:16px;}
+  .sb-links{display:flex;gap:13px;font-size:14px;font-weight:700;} .sb-links a{text-decoration:none;color:var(--ink-2);} .sb-links a:hover{color:var(--brand);}
+  .wrap{max-width:880px;margin:0 auto;padding:24px 18px 70px;}
+  .hero{text-align:center;padding:22px 10px 6px;}
+  .hero h1{font-size:29px;margin:6px 0 12px;line-height:1.32;}
+  .hero p{font-size:15.5px;color:var(--ink-2);max-width:620px;margin:0 auto;}
+  .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0 6px;}
+  .chip{font-size:12.5px;font-weight:800;color:var(--brand);background:#ecebfb;padding:6px 13px;border-radius:20px;}
+  @media (prefers-color-scheme:dark){.chip{background:#22223a;}}
+  h2{font-size:21px;margin:40px 0 6px;} .lead2{color:var(--ink-2);font-size:14px;margin:0 0 14px;}
+  .tools{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;} @media(max-width:720px){.tools{grid-template-columns:1fr 1fr;}} @media(max-width:460px){.tools{grid-template-columns:1fr;}}
+  .tool{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);transition:.15s;}
+  .tool:hover{transform:translateY(-2px);border-color:var(--brand);}
+  .tool .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:25px;background:var(--bg);}
+  .tool h3{margin:12px 0 4px;font-size:17px;} .tool p{margin:0;font-size:13px;color:var(--ink-2);}
+  .tool .go{margin-top:10px;font-size:13px;font-weight:800;color:var(--brand);}
+  .use{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:6px;} @media(max-width:720px){.use{grid-template-columns:1fr;}}
+  .use .u{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px;} .use .u b{display:block;margin-bottom:5px;} .use .u p{margin:0;font-size:13.5px;color:var(--ink-2);}
+  .faq{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:6px 18px;}
+  .faq details{border-bottom:1px solid var(--line);padding:13px 0;} .faq details:last-child{border-bottom:none;}
+  .faq summary{font-weight:800;cursor:pointer;font-size:15px;} .faq p{font-size:13.5px;color:var(--ink-2);margin:8px 0 0;}
+  .crumb{font-size:12.5px;color:var(--muted);margin:2px 0 14px;} .crumb a{color:var(--ink-2);text-decoration:none;}
+  .page-h1{font-size:26px;margin:4px 0 6px;} .lead{font-size:15px;color:var(--ink-2);margin:0 0 20px;}
+  .cardp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);}
+  .prose h2{font-size:19px;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line);} .prose h2:first-child{margin-top:4px;}
+  .prose p{margin:8px 0;font-size:14.5px;} .prose ul{margin:8px 0;padding-left:22px;} .prose li{margin:6px 0;font-size:14.5px;}
+  .prose dt{font-weight:800;font-size:14px;margin-top:12px;} .prose dd{margin:2px 0 0;font-size:14.5px;color:var(--ink-2);}
+  .cta{display:inline-block;text-decoration:none;font-weight:800;font-size:15px;padding:12px 22px;border-radius:13px;background:var(--brand);color:#fff;margin-top:8px;}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);text-align:center;line-height:2;}
+  footer a{color:var(--ink-2);text-decoration:none;margin:0 7px;}
+
+  .prose h3{font-size:16px;margin:20px 0 6px;}
+  .prose ol{margin:8px 0;padding-left:22px;} .prose ol li{margin:8px 0;font-size:14.5px;}
+  .prose table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px;} .prose td,.prose th{border:1px solid var(--line);padding:7px 10px;text-align:left;}
+  .rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;} @media(max-width:600px){.rel-grid{grid-template-columns:1fr;}}
+  .rel{display:block;text-decoration:none;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:800;} .rel:hover{border-color:var(--brand);}
+  .rel span{display:block;font-size:12px;color:var(--ink-2);font-weight:500;margin-top:2px;}
+  .note{background:var(--good-bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0;font-size:13.5px;color:var(--ink-2);}
+</style>
+</head>
+<body>
+<nav class="sitebar"><a class="sb-brand" href="/"><span class="sb-logo">🧮</span>ぱっと計算</a><div class="sb-links"><a href="/">ツール一覧</a><a href="about">このサイトについて</a></div></nav>
+<div class="wrap">
+  <div class="crumb"><a href="/">ホーム</a> ／ 割り勘の端数、どう分ける？</div>
+  <h1 class="page-h1">割り勘の端数、どう分けると揉めないか</h1>
+  <p class="lead">金額の計算より、決め方を先に共有しておくほうが、たいてい平和に終わります。</p>
+  <div class="cardp prose">
+
+  <h2>結論</h2>
+  <p>割り勘でぎくしゃくする原因は、金額の大きさではなく<b>決め方が共有されていないこと</b>です。合計を人数で割ると、たいてい割り切れません。その端数を誰がどう負担するかが決まっていないと、その場の力関係で決まってしまい、後味が悪くなります。</p>
+  <p>おすすめは、<b>会計の前に方法を宣言しておく</b>ことです。「100円単位に切り上げて、余りは幹事が引き取る」と先に言っておけば、金額が出てから交渉する必要がなくなります。</p>
+
+  <h2>端数の扱い方は、大きく4つ</h2>
+  <table><tr><th>方法</th><th>内容</th><th>向く場面</th></tr>
+  <tr><td>切り上げ</td><td>1人あたりを100円単位などに切り上げる。余りは幹事が持つか、次回に回す。</td><td>人数が多い会。集金が速い。</td></tr>
+  <tr><td>幹事が端数を負担</td><td>1円単位まで割り、余りを幹事が引き受ける。</td><td>少人数。正確さを重視する場合。</td></tr>
+  <tr><td>じゃんけん・くじ</td><td>端数を誰が持つかをその場で決める。</td><td>気心の知れた集まり。</td></tr>
+  <tr><td>傾斜配分</td><td>飲んだ人・食べた人で金額を変える。</td><td>飲まない人がいる会。</td></tr>
+  </table>
+  <p>どれが正しいということはありません。<b>その場の顔ぶれに合う方法を、先に決めておく</b>ことが本質です。</p>
+
+  <h2>切り上げが選ばれやすい理由</h2>
+  <p>実務でいちばん使われるのは切り上げです。理由は3つあります。</p>
+  <ul>
+    <li><b>集金が速い</b>：1円玉や5円玉のやりとりが消えます。人数が多いほど効果が大きくなります。</li>
+    <li><b>不足が出ない</b>：切り捨てだと合計が足りなくなり、その差額を誰かが埋めることになります。切り上げなら必ず足ります。</li>
+    <li><b>余りの使い道を決めやすい</b>：「余ったぶんは次回のお茶代」と決めておけば、幹事が得をしている感じも出ません。</li>
+  </ul>
+  <p>注意点は、切り上げの単位を大きくしすぎないことです。1,000円単位で切り上げると、余りがかなりの額になり「取りすぎでは」という空気になります。100円単位、多くても500円単位が無難です。</p>
+
+  <h2>飲まない人がいるときの考え方</h2>
+  <p>お酒を飲まない人がいる会で完全に等分すると、不公平感が残ります。かといって1品ずつ精算すると手間がかかりすぎます。落としどころとしてよく使われるのが、<b>2段階に分ける</b>方法です。</p>
+  <p>まず料理代を全員で等分し、飲み物代だけを飲んだ人で分ける、という考え方です。厳密ではありませんが、「飲んでいないのに同額」という一番大きな不満は解消できます。</p>
+  <p>この場合も、<b>始まる前に伝えておく</b>ことが大切です。会計の段になってから言い出すと、金額の交渉のように見えてしまいます。誘う時点で「飲まない人は少し安くするね」と一言添えておくと、参加のハードルも下がります。</p>
+
+  <h2>幹事が損をしない段取り</h2>
+  <ol>
+    <li><b>方法を先に宣言する</b>：会の最初、または誘う段階で「100円単位で切り上げます」と伝えます。</li>
+    <li><b>人数を早めに確定する</b>：当日のキャンセルは幹事の持ち出しになりがちです。何日前から実費負担かを決めておくと揉めません。</li>
+    <li><b>合計と1人あたりを見せる</b>：計算過程が見えると納得感が違います。画面を見せるだけで十分です。</li>
+    <li><b>余りの行き先を言う</b>：「余りは次回に回します」と伝えれば、切り上げへの抵抗がなくなります。</li>
+  </ol>
+
+  <h2>会の種類ごとの目安</h2>
+  <p>同じ割り勘でも、集まりの性質によって適した決め方が変わります。</p>
+  <ul>
+    <li><b>職場の歓送迎会</b>：人数が多く、役職差もあるため、切り上げ＋一律が最も揉めません。上の立場の人が多めに出す場合は、幹事が事前に相談しておくと当日スムーズです。</li>
+    <li><b>友人同士の食事</b>：金額差が小さいので1円単位まで割っても構いません。送金アプリを使えば端数もそのまま送れます。</li>
+    <li><b>サークル・部活の打ち上げ</b>：学生が多い場合、金額の負担感が人によって違います。上限額を先に告知しておくと参加しやすくなります。</li>
+    <li><b>家族・親族の集まり</b>：そもそも割り勘にするかどうかから確認が要ります。誰が出すのかが暗黙になっていると、後々しこりが残りやすい場面です。</li>
+  </ul>
+
+  <h2>金額を「見せる」だけで納得感が変わる</h2>
+  <p>割り勘でいちばん不満が出やすいのは、金額そのものより<b>計算が見えないこと</b>です。幹事が暗算して「1人3,500円」とだけ言うと、根拠が分かりません。悪意がなくても、受け取る側は確かめようがない状態に置かれます。</p>
+  <p>合計金額、人数、1人あたり、端数の扱い——この4つが画面に出ていれば、説明はほとんど要りません。スマホの画面を見せて「これで割りました」と言うだけで済みます。数字を読み上げるより速く、誤解も生じません。</p>
+  <p>もうひとつ効くのが、<b>領収書の合計と画面の合計が一致していること</b>を示すことです。ここがずれていなければ、あとの計算は単純な割り算です。会計後にレシートを写真に撮っておくと、後日「あれいくらだった？」と聞かれたときにも答えられます。</p>
+
+  <h2>集金の実務でつまずく点</h2>
+  <ul>
+    <li><b>おつりが用意できない</b>：切り上げにしておくと、多くの人が同じ金額を出すため、おつりのやりとりがほぼ消えます。</li>
+    <li><b>その場で払えない人がいる</b>：送金アプリの宛先を先に共有しておくと、後日回収の手間が減ります。誰が未払いかを記録しておくことも大切です。</li>
+    <li><b>幹事が立て替えたまま忘れる</b>：金額が小さいと請求しづらくなり、結果的に幹事の負担になります。会が終わる前にその場で回収するのが、いちばん確実です。</li>
+    <li><b>人数が直前に変わる</b>：確定した人数で計算し、後から増減した分をその場で調整するほうが、全員に再計算を伝えるより混乱しません。</li>
+  </ul>
+
+  <h2>今すぐ使えるツール</h2>
+  <p><a href="tool-warikan">割り勘</a>は、合計金額と人数を入れると1人あたりの金額と端数をその場で出します。切り上げ単位も選べるので、決めた方法どおりの金額をすぐ共有できます。計算はすべて端末の中で行われ、入力した金額が外部に送られることはありません。</p>
+  <p>会費に消費税の考え方が絡む場合は<a href="tool-tax">消費税計算</a>、クーポンや割引がある場合は<a href="tool-discount">割引価格</a>も合わせて使えます。</p>
+
+
+  <h2>よくある質問</h2>
+  <h3>端数は切り上げと切り捨て、どちらがよいですか？</h3>
+  <p>切り上げをおすすめします。切り捨てにすると集めた合計が支払額に届かず、その差額を誰かが負担することになります。切り上げなら必ず足りますし、余りの使い道を先に決めておけば不満も出にくくなります。</p>
+  <h3>切り上げの単位はどれくらいが適切ですか？</h3>
+  <p>100円単位が使いやすく、多くても500円単位までにとどめるのが無難です。1,000円単位にすると余りが大きくなり、集めすぎている印象を与えます。人数が多いほど余りの総額は膨らむので、単位は小さめのほうが安全です。</p>
+  <h3>飲まない人の会費はどう決めればよいですか？</h3>
+  <p>料理代を全員で等分し、飲み物代だけを飲んだ人で分ける2段階方式がよく使われます。厳密な精算ではありませんが手間が少なく、不公平感の大半は解消できます。誘う段階で伝えておくと、当日の交渉になりません。</p>
+  <h3>当日キャンセルの人の分はどうすればよいですか？</h3>
+  <p>あらかじめルールを決めておくのが唯一の対策です。「前日以降のキャンセルは会費をいただきます」と告知しておけば、幹事の持ち出しを防げます。決めていないと幹事が黙って負担する形になりやすく、これが幹事の負担感の主な原因です。</p>
+
+  <h2>関連ツール</h2>
+  <div class="rel-grid">
+    <a class="rel" href="tool-warikan">🧾 割り勘 <span>1人いくらを端数まで計算</span></a>
+    <a class="rel" href="tool-tax">％ 消費税計算 <span>税抜⇄税込をすぐ</span></a>
+  </div>
+
+<div class="note"><b>ご注意。</b>この記事は一般的な考え方をまとめたものです。税額の確定や書類の要件など、正確な取り扱いが必要な場面では、国税庁の案内や税理士など専門家の情報をご確認ください。制度は改正されることがあります。</div>
+
+  <div><a class="cta" href="/">ツール一覧を見る</a></div>
+  </div>
+  <footer><div><a href="/">ツール一覧</a>・<a href="about">このサイトについて</a>・<a href="privacy">プライバシー</a>・<a href="terms">利用規約</a>・<a href="https://kawatare.studio/">かわたれ studio</a></div><div>ぱっと計算 ・ 最終更新：2026-08-04</div></footer>
+</div>
+</body>
+</html>

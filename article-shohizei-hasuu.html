@@ -74,6 +74,10 @@
   .rel{display:block;text-decoration:none;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:800;} .rel:hover{border-color:var(--brand);}
   .rel span{display:block;font-size:12px;color:var(--ink-2);font-weight:500;margin-top:2px;}
   .note{background:var(--good-bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0;font-size:13.5px;color:var(--ink-2);}
+  .aff{background:var(--good-bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0;}
+  .aff-tag{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--ink-2);padding:2px 8px;border-radius:5px;}
+  .aff-text{margin:8px 0 6px;font-size:13.5px;color:var(--ink-2);line-height:1.8;}
+  .aff-links{margin:0;font-size:13.5px;line-height:1.9;} .aff-links a{font-weight:800;}
 </style>
 </head>
 <body>
@@ -150,6 +154,8 @@
   <h3>インボイスでは端数処理に決まりがありますか？</h3>
   <p>あります。適格請求書では、一つの請求書につき税率ごとに1回だけ端数処理を行うこととされています。商品明細ごとに端数処理をして合算する方法は認められていません。請求書を発行する立場の方は、システムの設定がこれに沿っているか確認してください。</p>
 
+    <div class="aff" data-aff="patto/article-shohizei-hasuu"><span class="aff-tag">PR</span><p class="aff-text">税率ごとの集計や、インボイスの要件を満たす請求書の作成を自動化したい方向けの会計ソフト例です。無料で試せるプランがあります。</p><p class="aff-links"><a href="https://www.freee.co.jp/" target="_blank" rel="noopener sponsored nofollow" data-aff-click="freee">freee会計（公式サイト）</a> ・ <a href="https://biz.moneyforward.com/" target="_blank" rel="noopener sponsored nofollow" data-aff-click="moneyforward">マネーフォワード クラウド会計（公式サイト）</a></p></div>
+
   <h2>関連ツール</h2>
   <div class="rel-grid">
     <a class="rel" href="tool-tax">％ 消費税計算 <span>税抜⇄税込と税額を表示</span></a>
@@ -162,5 +168,24 @@
   </div>
   <footer><div><a href="/">ツール一覧</a>・<a href="about">このサイトについて</a>・<a href="privacy">プライバシー</a>・<a href="terms">利用規約</a>・<a href="https://kawatare.studio/">かわたれ studio</a></div><div>ぱっと計算 ・ 最終更新：2026-08-04</div></footer>
 </div>
+<script>
+/* アフィリエイトのクリック計測。失敗してもリンク遷移は妨げない。 */
+(function(){
+  document.addEventListener('click', function(e){
+    try{
+      var a = e.target && e.target.closest && e.target.closest('a[data-aff-click]');
+      if(!a) return;
+      var slot = a.closest('.aff');
+      if(typeof gtag === 'function'){
+        gtag('event','affiliate_click',{
+          program: a.getAttribute('data-aff-click') || '',
+          slot: (slot && slot.getAttribute('data-aff')) || '',
+          link_url: a.href || ''
+        });
+      }
+    }catch(err){/* 計測の失敗は無視する */}
+  }, true);
+})();
+</script>
 </body>
 </html>

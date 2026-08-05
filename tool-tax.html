@@ -74,6 +74,10 @@
   .foot a{color:var(--ink-2);}
 
 
+  .aff{background:var(--good-bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0;}
+  .aff-tag{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--ink-2);padding:2px 8px;border-radius:5px;}
+  .aff-text{margin:8px 0 6px;font-size:13.5px;color:var(--ink-2);line-height:1.8;}
+  .aff-links{margin:0;font-size:13.5px;line-height:1.9;} .aff-links a{font-weight:800;}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX161KZPB3"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RX161KZPB3');</script>
@@ -116,6 +120,8 @@
     <a class="rel" href="article-shohizei-hasuu">📖 消費税の税抜・税込と端数処理 <span>インボイスでのルールまで</span></a>
     <a class="rel" href="article-waribiki-yomikata">📖 「3割引」と「30％オフ」は同じ？ <span>値引きと税の順番</span></a>
   </div>
+
+    <div class="aff" data-aff="patto/tool-tax"><span class="aff-tag">PR</span><p class="aff-text">毎回この画面で計算するのが手間になってきたら、会計ソフトで自動集計する方法もあります。</p><p class="aff-links"><a href="https://www.freee.co.jp/" target="_blank" rel="noopener sponsored nofollow" data-aff-click="freee">freee会計（公式サイト）</a> ・ <a href="https://biz.moneyforward.com/" target="_blank" rel="noopener sponsored nofollow" data-aff-click="moneyforward">マネーフォワード クラウド会計（公式サイト）</a></p></div>
 
   <h2>よくある質問</h2>
     <div class="faq"><details open><summary>軽減税率（8%）に対応していますか？</summary><p>はい。10%・8%を選べます。任意の税率で計算したい場合もプルダウンから選べます。</p></details><details><summary>端数はどう処理されますか？</summary><p>税抜→税込は消費税を切り捨て、税込→税抜は税抜額を四捨五入して表示します（一般的な処理）。</p></details><details><summary>データは送信されますか？</summary><p>いいえ。すべて端末内で計算します。</p></details></div>
@@ -191,5 +197,24 @@ if(isIOS&&isSafari){setTimeout(function(){build('共有ボタン → 「ホー�
 })();
 </script>
 <!-- pwa:end -->
+<script>
+/* アフィリエイトのクリック計測。失敗してもリンク遷移は妨げない。 */
+(function(){
+  document.addEventListener('click', function(e){
+    try{
+      var a = e.target && e.target.closest && e.target.closest('a[data-aff-click]');
+      if(!a) return;
+      var slot = a.closest('.aff');
+      if(typeof gtag === 'function'){
+        gtag('event','affiliate_click',{
+          program: a.getAttribute('data-aff-click') || '',
+          slot: (slot && slot.getAttribute('data-aff')) || '',
+          link_url: a.href || ''
+        });
+      }
+    }catch(err){/* 計測の失敗は無視する */}
+  }, true);
+})();
+</script>
 </body>
 </html>
